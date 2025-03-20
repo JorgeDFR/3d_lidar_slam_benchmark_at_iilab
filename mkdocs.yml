@@ -1,11 +1,11 @@
 # Project information
-site_name: Indoor Benchmark of 3D LiDAR SLAM at iilab -- Industry and Innovation Laboratory 
+site_name: Indoor Benchmark of 3D LiDAR SLAM at iilab 
 site_url: https://jorgedfr.github.io/3d_lidar_slam_benchmark/
 site_author: Jorge Diogo Ribeiro
 site_description:
   Website containing all the documentation on electronics, mechanical designs,
   3D-printed components, along with all the code developed within the scope of
-  the article 'Indoor Benchmark of 3D LiDAR SLAM at iilab -- Industry and Innovation Laboratory'.
+  the article 'Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory'.
   The article is a work by Jorge Diogo Ribeiro, Ricardo B. Sousa, João G. Martins,
   André S. Aguiar,Filipe N. Santos, Héber Miguel Sobreira,
   submitted at the IEEE Access open-access scientific journal.

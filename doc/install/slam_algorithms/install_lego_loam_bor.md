@@ -20,7 +20,7 @@ Ensure you have the following components:
 - [**Eigen**](https://gitlab.com/libeigen/eigen): `sudo apt install libeigen3-dev`
 - [**PCL**](https://github.com/PointCloudLibrary/pcl): `sudo apt install libpcl-dev`
 - [**TBB**](https://github.com/oneapi-src/oneTBB): `sudo apt install libtbb-dev`
-- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/docs/install/dependencies/install_gtsam_403.md)
+- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/doc/install/dependencies/install_gtsam_403.md)
 
 ### Install LeGO-LOAM-BOR
 

@@ -6,17 +6,17 @@ TODO
 
 **ROS 1**
 
-- [**A-LOAM**](/docs/install/slam_algorithms/install_aloam.md)
-- [**LeGO-LOAM**](/docs/install/slam_algorithms/install_lego_loam_bor.md)
-- [**LIORF**](/docs/install/slam_algorithms/install_liorf.md)
+- [**A-LOAM**](/doc/install/slam_algorithms/install_aloam.md)
+- [**LeGO-LOAM**](/doc/install/slam_algorithms/install_lego_loam_bor.md)
+- [**LIORF**](/doc/install/slam_algorithms/install_liorf.md)
 - [**DLIO**](todo)
 
 **ROS 2**
 
 - [**VineSLAM**](todo)
-- [**KISS-ICP**](/docs/install/slam_algorithms/install_kiss_icp.md)
-- [**GLIM**](/docs/install/slam_algorithms/install_glim.md)
-- [**Kinematic-ICP**](/docs/install/slam_algorithms/install_kinematic_icp.md)
+- [**KISS-ICP**](/doc/install/slam_algorithms/install_kiss_icp.md)
+- [**GLIM**](/doc/install/slam_algorithms/install_glim.md)
+- [**Kinematic-ICP**](/doc/install/slam_algorithms/install_kinematic_icp.md)
 - [**MOLA-LO**](todo)
 
 ## IILABS 3D: iilab Indoor LiDAR-based SLAM Dataset
@@ -41,7 +41,7 @@ TODO: Show sequence images
 
 ## Docker
 
-- [**Docker**](https://www.docker.com): Follow the installation guide [here](/docs/install/docker/install_docker.md)
+- [**Docker**](https://www.docker.com): Follow the installation guide [here](/doc/install/docker/install_docker.md)
 
 ```sh
 # Clone this repository

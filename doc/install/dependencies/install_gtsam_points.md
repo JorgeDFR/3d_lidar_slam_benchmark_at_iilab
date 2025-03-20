@@ -29,10 +29,10 @@ sudo apt install libtbb-dev
 
 Additionally, ensure you have the following components:
 
-- [**GTSAM**](/docs/install/dependencies/install_gtsam.md)
+- [**GTSAM**](/doc/install/dependencies/install_gtsam.md)
 - [**OpenMP**](https://www.openmp.org) (Optional)
 - [**CUDA**](https://developer.nvidia.com/cuda-toolkit) (Optional)
-- [**Iridescence**](/docs/install/dependencies/install_iridescence.md) (Optional)
+- [**Iridescence**](/doc/install/dependencies/install_iridescence.md) (Optional)
 
 ### Step 2: Install gtsam_points
 

@@ -21,9 +21,9 @@ sudo apt install libomp-dev libboost-all-dev libmetis-dev \
 
 Additionally, ensure you have the following components:
 
-- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/docs/install/dependencies/install_gtsam_42a9.md)
-- [**gtsam_points**](https://github.com/koide3/gtsam_points): Follow the installation guide [here](/docs/install/dependencies/install_gtsam_points.md)
-- [**Iridescence**](https://github.com/koide3/iridescence): Follow the installation guide [here](/docs/install/dependencies/install_iridescence.md) (Optional - visualization alternative to RViz)
+- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/doc/install/dependencies/install_gtsam_42a9.md)
+- [**gtsam_points**](https://github.com/koide3/gtsam_points): Follow the installation guide [here](/doc/install/dependencies/install_gtsam_points.md)
+- [**Iridescence**](https://github.com/koide3/iridescence): Follow the installation guide [here](/doc/install/dependencies/install_iridescence.md) (Optional - visualization alternative to RViz)
 - [**CUDA**](https://developer.nvidia.com/cuda-toolkit): Follow the installation guide [here](https://developer.nvidia.com/cuda-toolkit) (Optional - for GPU parallel processing)
 
 ### Install GLIM ROS 1

@@ -15,7 +15,7 @@ Ensure you have the following components:
 
 - [**Eigen**](https://gitlab.com/libeigen/eigen): `sudo apt install libeigen3-dev`
 - [**PCL**](https://github.com/PointCloudLibrary/pcl): `sudo apt install libpcl-dev`
-- [**Livox-SDK**](/docs/install/dependencies/install_livox_sdk.md)
+- [**Livox-SDK**](/doc/install/dependencies/install_livox_sdk.md)
 - [**livox_ros_driver**](https://github.com/Livox-SDK/livox_ros_driver)
 
 ### Install Fast-LIO

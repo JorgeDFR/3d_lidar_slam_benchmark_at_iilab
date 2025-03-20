@@ -1,0 +1,164 @@
+# Project information
+site_name: Indoor Benchmark of 3D LiDAR SLAM at iilab -- Industry and Innovation Laboratory 
+site_url: https://jorgedfr.github.io/3d_lidar_slam_benchmark/
+site_author: Jorge Diogo Ribeiro
+site_description:
+  Website containing all the documentation on electronics, mechanical designs,
+  3D-printed components, along with all the code developed within the scope of
+  the article 'Indoor Benchmark of 3D LiDAR SLAM at iilab -- Industry and Innovation Laboratory'.
+  The article is a work by Jorge Diogo Ribeiro, Ricardo B. Sousa, João G. Martins,
+  André S. Aguiar,Filipe N. Santos, Héber Miguel Sobreira,
+  submitted at the IEEE Access open-access scientific journal.
+
+# Repository
+repo_name: jorgedfr/3d_lidar_slam_benchmark
+repo_url: https://github.com/jorgedfr/3d_lidar_slam_benchmark
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright:
+  Copyright &copy; 2025 Jorge Diogo Ribeiro et al., INESC TEC
+
+# Configuration
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: inesctec
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Red Hat Text
+    code: JetBrains Mono
+  favicon: assets/logo/inesctec_symbol_color.png
+  logo: assets/logo/inesctec_symbol_white.png
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/INESCTEC
+      name: GitHub
+    - icon: fontawesome/brands/osi
+      link: https://oss.inesctec.pt/
+      name: INESC TEC Open Source Software
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/inesc-tec/
+      name: LinkedIn
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/inesctec/
+      name: Instagram
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@INESC_TEC
+      name: YouTube
+
+extra_css:
+  - stylesheets/extra.css
+
+# Markdown extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.pathconverter:
+      base_path: 'jorgedfr/3d_lidar_slam_benchmark'
+      relative_path: ''
+      absolute: false
+
+# Page tree
+nav:
+  - About: index.md
+  - Dataset: 
+    - content/dataset/index.md
+    - Mobile Robot Platform: content/dataset/mobile_robot_platform.md
+    - Ground Truth: content/dataset/ground_truth.md
+    - Sensors:
+      - content/dataset/sensors/index.md
+      - Xsens MTi-630 AHRS (IMU): content/dataset/sensors/xsens_mti-630-ahrs.md
+      - Livox Mid 360: content/dataset/sensors/livox_mid-360.md
+      - Ouster OS1-64: content/dataset/sensors/ouster_os1-64.md
+      - RoboSense RS-Helios-5515: content/dataset/sensors/robosense_rs-helios-5515.md
+      - Velodyne VLP-16: content/dataset/sensors/velodyne_vlp-16.md
+    - Sequences: 
+      - content/dataset/sequences/index.md
+      - Calibration Sequences: content/dataset/sequences/calibration_sequences.md
+      - Benchmark Sequences: content/dataset/sequences/benchmark_sequences.md
+  - Benchmark: 
+    - content/benchmark/index.md
+    - SLAM Algorithms: content/benchmark/slam_algorithms.md
+    - Docker: content/benchmark/docker.md
+    - Results: 
+      - content/benchmark/results/index.md
+      - 3D LiDAR Sensors:
+        - Livox Mid 360: content/benchmark/results/3d_lidar_sensors/livox_mid-360.md
+        - Ouster OS1-64: content/benchmark/results/3d_lidar_sensors/ouster_os1-64.md
+        - RoboSense RS-Helios-5515: content/benchmark/results/3d_lidar_sensors/robosense_rs-helios-5515.md
+        - Velodyne VLP-16: content/benchmark/results/3d_lidar_sensors/velodyne_vlp-16.md
+      - SLAM Algorithms:
+        - A-LOAM: content/benchmark/results/slam_algorithms/aloam.md
+        - LeGO-LOAM-BOR: content/benchmark/results/slam_algorithms/lego_loam_bor.md
+        - LIORF: content/benchmark/results/slam_algorithms/liorf.md
+        - DLIO: content/benchmark/results/slam_algorithms/dlio.md
+        - VineSLAM: content/benchmark/results/slam_algorithms/vineslam.md
+        - KISS-ICP: content/benchmark/results/slam_algorithms/kiss_icp.md
+        - GLIM: content/benchmark/results/slam_algorithms/glim.md
+        - Kinematic-ICP: content/benchmark/results/slam_algorithms/kinematic_icp.md
+        - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md

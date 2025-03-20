@@ -21,7 +21,7 @@ Ensure you have the following components:
 - [**PCL**](https://github.com/PointCloudLibrary/pcl): `sudo apt install libpcl-dev`
 - [**OpenCV**](https://github.com/opencv/opencv): `sudo apt install libopencv-dev`
 - [**GeographicLib**](https://github.com/geographiclib/geographiclib): `sudo apt install libgeographic-dev`
-- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/docs/install/dependencies/install_gtsam_403.md)
+- [**GTSAM**](https://github.com/borglab/gtsam): Follow the installation guide [here](/doc/install/dependencies/install_gtsam_403.md)
 
 ### Install LIORF
 

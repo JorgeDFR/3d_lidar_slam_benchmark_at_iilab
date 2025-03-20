@@ -19,7 +19,7 @@ Ensure the following libraries and packages are installed on your system:
 
 - [**Eigen**](https://gitlab.com/libeigen/eigen): `sudo apt install libeigen3-dev`
 - [**PCL**](https://github.com/PointCloudLibrary/pcl): `sudo apt install libpcl-dev`
-- [**Ceres Solver**](http://ceres-solver.org): Follow the installation guide [here](/docs/install/dependencies/install_ceres_solver.md)
+- [**Ceres Solver**](http://ceres-solver.org): Follow the installation guide [here](/doc/install/dependencies/install_ceres_solver.md)
 
 ### Install A-LOAM
 

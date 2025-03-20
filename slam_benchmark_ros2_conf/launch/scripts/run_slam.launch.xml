@@ -1,0 +1,10 @@
+<launch>
+  <arg name="conf" default="$(env SLAM_CONF 'kiss_icp')"/>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/scripts/$(var conf)/slam.xml">
+    <arg name="run_offline" value="$(var run_offline)"/>
+    <arg name="rosbag_path" value="$(var rosbag_path)"/>
+  </include>
+</launch>

@@ -1,0 +1,21 @@
+<launch>
+  <arg name="lidar_topic" default="/eve/ouster/points"/>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+
+  <rosparam command="load" subst_value="true" file="$(dirname)/lego_loam_bor_iilabs3d_ouster_os1_64.yaml"/>
+
+  <node pkg="lego_loam_bor" type="lego_loam_bor" name="lego_loam_bor" output="screen">
+    <param name="lidar_topic" value="$(arg lidar_topic)" type="string"/>
+    <param name="rosbag_path" value="$(arg rosbag_path)" if="$(arg run_offline)"/>
+    
+    <remap from="/lidar_points" to="$(arg lidar_topic)"/>
+    <remap from="/integrated_to_init" to="/slam_odom"/>
+  </node>
+
+  <!-- TF -->
+  <node pkg="tf2_ros" type="static_transform_publisher" 
+        name="world_to_map" args="0 0 0 1.570795 0 1.570795 world map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" 
+        name="laser_link_to_camera_link" args="0 0 0 -1.570795 -1.570795 0 laser_link camera_link"/>
+</launch>

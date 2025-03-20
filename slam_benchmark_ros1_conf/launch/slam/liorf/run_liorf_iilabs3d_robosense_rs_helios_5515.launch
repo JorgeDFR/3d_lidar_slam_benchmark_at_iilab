@@ -1,0 +1,11 @@
+<launch>
+  <rosparam command="load" subst_value="true" file="$(dirname)/liorf_iilabs3d_robosense_rs_helios_5515.yaml"/>
+
+  <node pkg="liorf" type="liorf_imageProjection"   name="liorf_imageProjection"   output="screen"/>
+  <node pkg="liorf" type="liorf_imuPreintegration" name="liorf_imuPreintegration" output="screen">
+    <remap from="/liorf/mapping/odometry" to="/slam_odom"/>
+  </node>
+  <node pkg="liorf" type="liorf_mapOptmization"    name="liorf_mapOptmization"    output="screen">
+    <remap from="/liorf/mapping/odometry" to="/slam_odom"/>
+  </node>
+</launch>

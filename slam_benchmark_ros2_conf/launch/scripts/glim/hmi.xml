@@ -1,0 +1,7 @@
+<launch>
+  <arg name="rviz2" default="$(find-pkg-share slam_benchmark_ros2_conf)/launch/scripts/glim/hmi/rviz2/rviz2.rviz"/>
+
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/hmi/rviz2/run_rviz2.launch.py">
+    <arg name="rviz_file" value="$(var rviz2)"/>
+  </include>
+</launch>

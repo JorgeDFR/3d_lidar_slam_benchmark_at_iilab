@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>slam_benchmark_ros2_conf</name>
+  <version>1.0.0</version>
+  <description>The slam_benchmark_ros2_conf package</description>
+
+  <maintainer email="jorge.d.ribeiro@inesctec.pt">Jorge Diogo Ribeiro</maintainer>
+
+  <author email="jorge.d.ribeiro@inesctec.pt">Jorge Diogo Ribeiro</author>
+  <author email="heber.m.sobreira@inesctec.pt">Héber Miguel Sobreira</author>
+  <author email="ricardo.b.sousa@inesctec.pt">Ricardo B. Sousa</author>
+  
+  <license>BSD 3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rviz2</depend>
+  <depend>tf2_ros</depend>
+
+  <exec_depend>ros2launch</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

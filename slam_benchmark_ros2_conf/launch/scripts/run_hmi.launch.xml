@@ -1,0 +1,5 @@
+<launch>
+  <arg name="conf" default="$(env SLAM_CONF 'kiss_icp')"/>
+
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/scripts/$(var conf)/hmi.xml"/>
+</launch>

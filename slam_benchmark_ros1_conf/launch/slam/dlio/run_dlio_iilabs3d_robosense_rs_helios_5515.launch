@@ -1,0 +1,31 @@
+<launch>
+  <arg name="pointcloud_topic" default="/eve/lidar3d"/>
+  <arg name="imu_topic" default="/eve/imu/data"/>
+
+  <!-- DLIO Odometry Node -->
+  <node ns="dlio" name="dlio_odom" pkg="direct_lidar_inertial_odometry" 
+        type="dlio_odom_node" output="screen" clear_params="true">
+    <rosparam command="load" subst_value="true" file="$(dirname)/dlio_params.yaml"/>
+    <rosparam command="load" subst_value="true" file="$(dirname)/dlio_iilabs3d_robosense_rs_helios_5515.yaml"/>
+
+    <remap from="~pointcloud" to="$(arg pointcloud_topic)"/>
+    <remap from="~imu" to="$(arg imu_topic)"/>
+
+    <remap from="~odom"     to="/slam_odom"/>
+    <remap from="~pose"     to="odom_node/pose"/>
+    <remap from="~path"     to="odom_node/path"/>
+    <remap from="~kf_pose"  to="odom_node/keyframes"/>
+    <remap from="~kf_cloud" to="odom_node/pointcloud/keyframe"/>
+    <remap from="~deskewed" to="odom_node/pointcloud/deskewed"/>
+  </node>
+
+  <!-- DLIO Mapping Node -->
+  <node ns="dlio" name="dlio_map" pkg="direct_lidar_inertial_odometry" 
+        type="dlio_map_node" output="screen" clear_params="true">
+    <rosparam command="load" subst_value="true" file="$(dirname)/dlio_params.yaml"/>
+    <rosparam command="load" subst_value="true" file="$(dirname)/dlio_iilabs3d_robosense_rs_helios_5515.yaml"/>
+
+    <remap from="~keyframes" to="odom_node/pointcloud/keyframe"/>
+    <remap from="~map" to="map_node/map"/>
+  </node>
+</launch>

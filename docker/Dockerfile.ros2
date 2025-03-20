@@ -1,0 +1,155 @@
+# Start from Ubuntu 22.04 (Jammy) base image
+FROM ubuntu:22.04
+
+# Generic
+# --------------------------------------------- #
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN ln -fs /usr/share/zoneinfo/UTC /etc/localtime
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    wget \
+    curl \
+    gnupg2 \
+    lsb-release \
+    build-essential \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+# --------------------------------------------- #
+
+# Install external libraries
+# --------------------------------------------- #
+
+# Install necessary tools and dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    cmake \
+    libboost-all-dev \
+    libeigen3-dev \
+    libglm-dev \
+    libglfw3-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libnanoflann-dev \
+    libtbb-dev \
+    && rm -rf /var/lib/apt/lists/*             
+
+# Install GTSAM 4.2a9
+RUN cd /tmp && \
+    git clone --branch 4.2a9 --depth 1 https://github.com/borglab/gtsam.git && \
+    cd gtsam && \
+    mkdir -p build && cd build && \
+    cmake .. -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
+             -DGTSAM_BUILD_TESTS=OFF \
+             -DGTSAM_WITH_TBB=OFF \
+             -DGTSAM_USE_SYSTEM_EIGEN=ON \
+             -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF && \
+    make -j4 && \
+    make install && \
+    rm -rf /tmp/gtsam
+
+# Install Iridescence 
+RUN cd /tmp && \
+    git clone https://github.com/koide3/iridescence.git --recursive && \
+    cd iridescence && \
+    mkdir -p build && cd build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release && \
+    make -j4 && \
+    make install && \
+    rm -rf /tmp/iridescence
+
+# Install gtsam_points
+RUN cd /tmp && \
+    git clone https://github.com/koide3/gtsam_points.git && \
+    cd gtsam_points && \
+    mkdir -p build && cd build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release \
+             -DBUILD_DEMO=OFF \
+             -DBUILD_TESTS=OFF \
+             -DBUILD_WITH_CUDA=OFF \
+             -DBUILD_WITH_MARCH_NATIVE=OFF && \
+    make -j4 && \
+    make install && \
+    rm -rf /tmp/gtsam_points
+# --------------------------------------------- #
+
+# ROS installation
+# --------------------------------------------- #
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV ROS_DISTRO=humble
+
+# Add ROS 2 apt repository and key
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+         -o /usr/share/keyrings/ros-archive-keyring.gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+          http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | \
+          tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# Install ROS 2 necessary tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-${ROS_DISTRO}-ros-base \
+    ros-${ROS_DISTRO}-rviz2 \
+    python3-colcon-common-extensions \
+    python3-colcon-mixin \
+    python3-rosdep \
+    python3-vcstool \
+    && rm -rf /var/lib/apt/lists/*
+
+# Initialize rosdep and update for ROS 2
+RUN rosdep init && rosdep update --rosdistro ${ROS_DISTRO}
+
+# Setup colcon mixin and metadata
+RUN colcon mixin add default \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add default \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
+# --------------------------------------------- #
+
+# SLAM algorithms workspace preparation
+# --------------------------------------------- #
+ARG ROS2_WS=/root/ros2_ws
+
+# Install MOLA-LO and necessary tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-${ROS_DISTRO}-mola \
+    ros-${ROS_DISTRO}-mola-state-estimation \
+    ros-${ROS_DISTRO}-mola-lidar-odometry \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create workspace directory and clone SLAM repositories
+RUN mkdir -p ${ROS2_WS}/src && \
+    cd ${ROS2_WS}/src && \
+    git clone https://github.com/PRBonn/kiss-icp.git && \
+    git clone https://github.com/Thorfr123/kinematic-icp.git && \
+    git clone https://github.com/koide3/glim.git && \
+    git clone https://github.com/koide3/glim_ros2.git
+
+# Copy local configuration files
+COPY ./slam_benchmark_ros2_conf ${ROS2_WS}/src/slam_benchmark_ros2_conf/
+
+# Install workspace dependencies and build
+WORKDIR ${ROS2_WS}
+RUN bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash && \
+             apt-get update && \
+             rosdep install --from-paths src --ignore-src -r -y && \
+             colcon build --packages-select kiss_icp kinematic_icp && \
+             colcon build --packages-select glim --cmake-args -DBUILD_WITH_CUDA=OFF && \
+             colcon build --packages-select glim_ros && \
+             colcon build --packages-select slam_benchmark_ros2_conf && \
+             rm -rf /var/lib/apt/lists/*"
+
+# Set up ROS environment sourcing for new shell sessions
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc && \
+    echo "source ${ROS2_WS}/install/setup.bash" >> ~/.bashrc
+# --------------------------------------------- #
+
+# ROS environment variables setting
+# --------------------------------------------- #
+WORKDIR /root
+COPY ./docker/ros2_entrypoint.sh /root/
+RUN chmod 777 /root/ros2_entrypoint.sh
+ENTRYPOINT ["/root/ros2_entrypoint.sh"]
+CMD ["bash"]
+# --------------------------------------------- #

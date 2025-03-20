@@ -1,0 +1,8 @@
+<launch>
+  <arg name="dataset" value="$(optenv SLAM_DATASET iilabs3d)"/>
+  <arg name="sensor" value="$(optenv SLAM_SENSOR velodyne_vlp_16)"/>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+  
+  <include file="$(dirname)/../../slam/aloam/run_aloam_$(arg dataset)_$(arg sensor).launch"/>
+</launch>

@@ -1,0 +1,19 @@
+<launch>
+  <arg name="lidar_topic" value="/eve/ouster/points"/>
+  
+  <rosparam command="load" subst_value="true" file="$(dirname)/aloam_iilabs3d_ouster_os1_64.yaml"/>
+
+  <node pkg="aloam_velodyne" type="ascanRegistration" name="aloam_scan_registration_node" output="screen">
+    <remap from="/velodyne_points" to="$(arg lidar_topic)"/>
+  </node>
+  <node pkg="aloam_velodyne" type="alaserOdometry" name="aloam_laser_odometry_node" output="screen"/>
+  <node pkg="aloam_velodyne" type="alaserMapping" name="aloam_laser_mapping_node" output="screen">
+    <remap from="/aft_mapped_to_init_high_frec" to="/slam_odom"/>
+  </node>
+
+  <!-- TF -->
+  <node pkg="tf2_ros" type="static_transform_publisher" 
+        name="world_to_map" args="0 0 0 0 0 0 world map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" 
+        name="aft_mapped_to_laser_link" args="0 0 0 0 0 0 aft_mapped laser_link"/>
+</launch>

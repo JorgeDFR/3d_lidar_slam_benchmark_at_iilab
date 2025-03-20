@@ -1,0 +1,13 @@
+<launch>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+  
+  <!-- Human-Machine Interface (HMI) -->
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/scripts/run_hmi.launch.xml"/>
+
+  <!-- SLAM Algorithm -->
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/scripts/run_slam.launch.xml">
+    <arg name="run_offline" value="$(var run_offline)"/>
+    <arg name="rosbag_path" value="$(var rosbag_path)"/>
+  </include>
+</launch>

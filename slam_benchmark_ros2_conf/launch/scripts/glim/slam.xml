@@ -1,0 +1,11 @@
+<launch>
+  <arg name="dataset" default="$(env SLAM_DATASET 'iilabs3d')"/>
+  <arg name="sensor" default="$(env SLAM_SENSOR 'velodyne_vlp_16')"/>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+
+  <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/slam/glim/run_glim_$(var dataset)_$(var sensor).launch.py">
+    <arg name="run_offline" value="$(var run_offline)"/>
+    <arg name="rosbag_path" value="$(var rosbag_path)"/>
+  </include>
+</launch>

@@ -1,0 +1,63 @@
+slam_node:
+  ros__parameters:
+    world_frame_id: eve/map
+    base_frame_id: eve/base_link
+    lidar_sensor_frame: eve/lidar3d
+    odom_frame_id: eve/odom
+    imu_sensor_frame: eve/imu_link
+
+    use_lidar_features: True
+    use_vertical_planes: False
+    use_ground_plane: False
+    use_imu: False
+    use_gyroscope: True
+    use_gps: False
+    use_gps_altitude: False
+    use_gps_heading: False
+
+    heading_offset: 0.0
+    imu_pitch_offset: 0.0
+    imu_roll_offset: 0.0
+
+    publish_level: 2 # 0 - do not publish any map
+                     # 1 - publish only the 3D map
+                     # 2 - publish all the maps
+
+    robot_dimensions:
+      x: 0.42 # meters
+      y: 0.32 # meters
+      z: 0.60 # meters
+
+    multilayer_mapping:
+      # Datum
+      datum:
+        latitude: 45.706199
+        longitude: 7.2495435
+        altitude: 668.63
+
+      # Topological map definitions
+      topological_map:
+        autogen_topological_map: True
+        folder: "$(env HOME)/.ros/vineslam/"
+        dimensions:
+          x: 100.0 # meters
+          y: 100.0 # meters
+          square_size: 20.0 # meters
+
+      # Grid map definitions
+      grid_map:
+        origin:
+          z: 0.0 # meters
+        height: 30.0 # meters
+        resolution: 0.25 # meters
+
+    pf:
+      n_particles: 300
+
+      # Particles innovation
+      sigma_xx: 0.5 # meters
+      sigma_yy: 0.5 # meters
+      sigma_zz: 0.1 # meters
+      sigma_RR: 0.1 # radians
+      sigma_PP: 0.1 # radians
+      sigma_YY: 1.5 # radians

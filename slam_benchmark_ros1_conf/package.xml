@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>slam_benchmark_ros1_conf</name>
+  <version>1.0.0</version>
+  <description>The slam_benchmark_ros1_conf package</description>
+
+  <maintainer email="jorge.d.ribeiro@inesctec.pt">Jorge Diogo Ribeiro</maintainer>
+
+  <author email="jorge.d.ribeiro@inesctec.pt">Jorge Diogo Ribeiro</author>
+  <author email="heber.m.sobreira@inesctec.pt">Héber Miguel Sobreira</author>
+  <author email="ricardo.b.sousa@inesctec.pt">Ricardo B. Sousa</author>
+
+  <license>BSD 3-Clause</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>rviz</depend>
+  <depend>tf2_ros</depend>
+
+  <export>
+    <build_type>catkin</build_type>
+  </export>
+</package>

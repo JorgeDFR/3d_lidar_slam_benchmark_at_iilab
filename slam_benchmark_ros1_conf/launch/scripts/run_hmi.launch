@@ -1,0 +1,5 @@
+<launch>
+  <arg name="conf" value="$(optenv SLAM_CONF aloam)"/>
+
+  <include file="$(dirname)/$(arg conf)/hmi.xml"/>
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+  <arg name="conf" value="$(optenv SLAM_CONF aloam)"/>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+
+  <include file="$(dirname)/$(arg conf)/slam.xml">
+    <arg name="run_offline" value="$(arg run_offline)"/>
+    <arg name="rosbag_path" value="$(arg rosbag_path)"/>
+  </include>
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+  <arg name="run_offline" default="false"/>
+  <arg name="rosbag_path" default=""/>
+
+  <!-- Human-Machine Interface (HMI) -->
+  <include file="$(dirname)/run_hmi.launch"/>
+
+  <!-- SLAM Algorithm -->
+  <include file="$(dirname)/run_slam.launch">
+    <arg name="run_offline" value="$(arg run_offline)"/>
+    <arg name="rosbag_path" value="$(arg rosbag_path)"/>
+  </include>
+</launch>

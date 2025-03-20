@@ -1,0 +1,33 @@
+# IILABS 3D (Ouster OS1-64 REV-C)
+
+dlio:
+  version: 1.1.1
+
+  adaptive: true
+
+  pointcloud:
+    deskew: true
+    voxelize: true
+
+  imu:
+    calibration: true
+    intrinsics:
+      accel:
+        bias: [ 0.0, 0.0, 0.0 ]
+        sm:   [ 1.,  0.,  0.,
+                0.,  1.,  0.,
+                0.,  0.,  1. ]
+      gyro:
+        bias: [ 0.0, 0.0, 0.0 ]
+
+  extrinsics:
+    baselink2imu:
+      t: [ 0.0, 0.0, 0.19996 ]
+      R: [ 1.,  0.,  0.,
+           0.,  1.,  0.,
+           0.,  0.,  1. ]
+    baselink2lidar:
+      t: [ 0.0, 0.0, 0.4367 ]
+      R: [ 1.,  0.,  0.,
+           0.,  1.,  0.,
+           0.,  0.,  1. ]

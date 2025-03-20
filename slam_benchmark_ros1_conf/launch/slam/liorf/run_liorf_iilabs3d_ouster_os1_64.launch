@@ -1,0 +1,12 @@
+<launch>
+  <rosparam command="load" subst_value="true" file="$(dirname)/liorf_iilabs3d_ouster_os1_64.yaml"/>
+  <!-- <rosparam command="load" subst_value="true" file="$(dirname)/liorf_iilabs3d_ouster_os1_64_internal_imu.yaml"/> -->
+
+  <node pkg="liorf" type="liorf_imageProjection"   name="liorf_imageProjection"   output="screen"/>
+  <node pkg="liorf" type="liorf_imuPreintegration" name="liorf_imuPreintegration" output="screen">
+    <remap from="/liorf/mapping/odometry" to="/slam_odom"/>
+  </node>
+  <node pkg="liorf" type="liorf_mapOptmization"    name="liorf_mapOptmization"    output="screen">
+    <remap from="/liorf/mapping/odometry" to="/slam_odom"/>
+  </node>
+</launch>

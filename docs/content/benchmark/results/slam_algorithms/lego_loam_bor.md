@@ -35,6 +35,42 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 
 ## Trajectory Plots
 
+### Nav A Diff Sequence 
+<div class="grid" markdown>
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_diff_velodyne.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_diff_ouster.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_diff_robosense.png)
+</div>
+
+### Nav A Omni Sequence 
+<div class="grid" markdown>
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_omni_velodyne.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_omni_ouster.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_nav_a_omni_robosense.png)
+</div>
+
+### Loop Sequence 
+<div class="grid" markdown>
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_loop_velodyne.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_loop_ouster.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_loop_robosense.png)
+</div>
+
+### Slippage Sequence 
+<div class="grid" markdown>
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_slippage_velodyne.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_slippage_ouster.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_slippage_robosense.png)
+</div>
+
 ### Ramp Sequence 
 <div class="grid" markdown>
 ![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_velodyne.png)
@@ -42,4 +78,13 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 ![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_ouster.png)
 
 ![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_robosense.png)
+</div>
+
+### Elevator Sequence 
+<div class="grid" markdown>
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_elevator_velodyne.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_elevator_ouster.png)
+
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_elevator_robosense.png)
 </div>

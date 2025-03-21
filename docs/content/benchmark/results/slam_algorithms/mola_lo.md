@@ -37,11 +37,11 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 
 ### Ramp Sequence 
 <div class="grid" markdown>
-![](../../../../assets/results/mola_lo/mola_lo_ramp_velodyne.png)
+![](../../../../assets/results/slam_algorithms/mola_lo/mola_lo_ramp_velodyne.png)
 
-![](../../../../assets/results/mola_lo/mola_lo_ramp_ouster.png)
+![](../../../../assets/results/slam_algorithms/mola_lo/mola_lo_ramp_ouster.png)
 
-![](../../../../assets/results/mola_lo/mola_lo_ramp_robosense.png)
+![](../../../../assets/results/slam_algorithms/mola_lo/mola_lo_ramp_robosense.png)
 
-![](../../../../assets/results/mola_lo/mola_lo_ramp_livox.png)
+![](../../../../assets/results/slam_algorithms/mola_lo/mola_lo_ramp_livox.png)
 </div>

@@ -37,9 +37,9 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 
 ### Ramp Sequence 
 <div class="grid" markdown>
-![](../../../../assets/results/liorf/liorf_ramp_velodyne.png)
+![](../../../../assets/results/slam_algorithms/liorf/liorf_ramp_velodyne.png)
 
-![](../../../../assets/results/liorf/liorf_ramp_ouster.png)
+![](../../../../assets/results/slam_algorithms/liorf/liorf_ramp_ouster.png)
 
-![](../../../../assets/results/liorf/liorf_ramp_robosense.png)
+![](../../../../assets/results/slam_algorithms/liorf/liorf_ramp_robosense.png)
 </div>

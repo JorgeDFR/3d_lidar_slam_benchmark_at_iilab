@@ -49,3 +49,21 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 | **MOLA-LO**                  | 0.104 °/m        | 0.076 °/m        | 0.104 °/m        | 0.099 °/m        | 0.230 °/m        |
 
 ## Trajectory Plots
+
+### Nav A Diff Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/nav_a_diff_robosense.png)
+
+### Nav A Omni Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/nav_a_omni_robosense.png)
+
+### Loop Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/loop_robosense.png)
+
+### Slippage Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/slippage_robosense.png)
+
+### Ramp Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/ramp_robosense.png)
+
+### Elevator Sequence
+![](../../../../assets/results/3d_lidar_sensors/robosense/elevator_robosense.png)

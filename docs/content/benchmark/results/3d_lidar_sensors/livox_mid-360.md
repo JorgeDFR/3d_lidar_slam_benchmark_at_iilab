@@ -49,3 +49,21 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 | **MOLA-LO**                  | 0.057 °/m        | 0.063 °/m        | 0.058 °/m        | 0.047 °/m        | 0.056 °/m        |
 
 ## Trajectory Plots
+
+### Nav A Diff Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/nav_a_diff_livox.png)
+
+### Nav A Omni Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/nav_a_omni_livox.png)
+
+### Loop Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/loop_livox.png)
+
+### Slippage Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/slippage_livox.png)
+
+### Ramp Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/ramp_livox.png)
+
+### Elevator Sequence
+![](../../../../assets/results/3d_lidar_sensors/livox/elevator_livox.png)

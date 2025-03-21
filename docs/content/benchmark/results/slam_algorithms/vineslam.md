@@ -37,11 +37,11 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 
 ### Ramp Sequence 
 <div class="grid" markdown>
-![](../../../../assets/results/vineslam/vineslam_ramp_velodyne.png)
+![](../../../../assets/results/slam_algorithms/vineslam/vineslam_ramp_velodyne.png)
 
-![](../../../../assets/results/vineslam/vineslam_ramp_ouster.png)
+![](../../../../assets/results/slam_algorithms/vineslam/vineslam_ramp_ouster.png)
 
-![](../../../../assets/results/vineslam/vineslam_ramp_robosense.png)
+![](../../../../assets/results/slam_algorithms/vineslam/vineslam_ramp_robosense.png)
 
-![](../../../../assets/results/vineslam/vineslam_ramp_livox.png)
+![](../../../../assets/results/slam_algorithms/vineslam/vineslam_ramp_livox.png)
 </div>

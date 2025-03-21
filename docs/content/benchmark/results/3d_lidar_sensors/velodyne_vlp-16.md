@@ -49,3 +49,21 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 | **MOLA-LO**                  | 0.088 °/m        | 0.088 °/m        | 0.106 °/m        | 0.092 °/m        | 0.822 °/m        |
 
 ## Trajectory Plots
+
+### Nav A Diff Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/nav_a_diff_velodyne.png)
+
+### Nav A Omni Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/nav_a_omni_velodyne.png)
+
+### Loop Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/loop_velodyne.png)
+
+### Slippage Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/slippage_velodyne.png)
+
+### Ramp Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/ramp_velodyne.png)
+
+### Elevator Sequence
+![](../../../../assets/results/3d_lidar_sensors/velodyne/elevator_velodyne.png)

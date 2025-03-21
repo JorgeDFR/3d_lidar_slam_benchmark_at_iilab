@@ -37,9 +37,9 @@ Mean value calculated over all 10-meter segments. Values are presented in degree
 
 ### Ramp Sequence 
 <div class="grid" markdown>
-![](../../../../assets/results/lego_loam_bor/lego_loam_bor_ramp_velodyne.png)
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_velodyne.png)
 
-![](../../../../assets/results/lego_loam_bor/lego_loam_bor_ramp_ouster.png)
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_ouster.png)
 
-![](../../../../assets/results/lego_loam_bor/lego_loam_bor_ramp_robosense.png)
+![](../../../../assets/results/slam_algorithms/lego_loam_bor/lego_loam_bor_ramp_robosense.png)
 </div>

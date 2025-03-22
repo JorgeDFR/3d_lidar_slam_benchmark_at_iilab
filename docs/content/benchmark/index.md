@@ -1,13 +1,1 @@
-# Benchmark 
-
-| SLAM Algorithm                                                                 | Code Repository                                                          | ROS Version    | VLP-16 | OS1-64 | RS-5515 | Mid 360 | IMU | Wheel Odom | Loop Closure  | Year |
-| :----------------------------------------------------------------------------- | :----------------------------------------------------------------------- | :------------: | :----: | :----: | :-----: | :-----: | :-: | :--------: | :-: | :--: |
-| [**LOAM**](https://ri.cmu.edu/pub_files/2014/7/Ji_LidarMapping_RSS2014_v8.pdf) | [A-LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)                | Noetic (ROS 1) | X      | X      | X       | -       | -   | -          | -   | 2014 |
-| [**LeGO-LOAM**](https://doi.org/10.1109/IROS.2018.8594299)                     | [LeGO-LOAM-BOR](https://github.com/facontidavide/LeGO-LOAM-BOR)          | Noetic (ROS 1) | X      | X      | X       | -       | -   | -          | X   | 2018 |
-| [**LIO-SAM**](https://doi.org/10.1109/IROS45743.2020.9341176)                  | [LIORF](https://github.com/YJZLuckyBoy/liorf)                            | Noetic (ROS 1) | X      | X      | X       | -       | X   | -          | X   | 2020 |
-| [**DLIO**](https://doi.org/10.1109/ICRA48891.2023.10160508)                    | [Official](https://github.com/vectr-ucla/direct_lidar_inertial_odometry) | Noetic (ROS 1) | X      | X      | X       | X       | X   | -          | -   | 2022 |
-| [**VineSLAM**](https://doi.org/10.3389/frobt.2022.832165)                      | [Official](https://gitlab.inesctec.pt/agrob/prototypes/vineslam-os)      | Humble (ROS 2) | X      | X      | X       | X       | X   | X          | -   | 2022 |
-| [**KISS-ICP**](https://doi.org/10.1109/LRA.2023.3236571)                       | [Official](https://github.com/PRBonn/kiss-icp)                           | Humble (ROS 2) | X      | X      | X       | X       | -   | -          | -   | 2023 |
-| [**GLIM**](https://doi.org/10.1016/j.robot.2024.104750)                        | [Official](https://github.com/koide3/glim)                               | Humble (ROS 2) | X      | X      | X       | X       | X   | -          | X   | 2024 |
-| [**Kinematic-ICP**](https://arxiv.org/pdf/2410.10277)                          | [Official](https://github.com/PRBonn/kinematic-icp)                      | Humble (ROS 2) | X      | X      | X       | X       | -   | X          | -   | 2024 |
-| [**MOLA-LO**](https://doi.org/10.1177/02783649251316881)                       | [Official](https://github.com/MOLAorg/mola_lidar_odometry)               | Humble (ROS 2) | X      | X      | X       | X       | -   | -          | -   | 2024 |
+TBC

@@ -132,11 +132,18 @@ nav:
     - Ground Truth: content/dataset/ground_truth.md
     - Sensors:
       - content/dataset/sensors/index.md
-      - Xsens MTi-630 AHRS (IMU): content/dataset/sensors/xsens_mti-630-ahrs.md
-      - Livox Mid 360: content/dataset/sensors/livox_mid-360.md
-      - Ouster OS1-64: content/dataset/sensors/ouster_os1-64.md
-      - RoboSense RS-Helios-5515: content/dataset/sensors/robosense_rs-helios-5515.md
-      - Velodyne VLP-16: content/dataset/sensors/velodyne_vlp-16.md
+      - Inertial Measurement Units (IMUs):
+        - content/dataset/sensors/imu/index.md
+        - Xsens MTi-630 AHRS: content/dataset/sensors/imu/xsens_mti-630-ahrs.md
+      - 2D Laser Scanners:
+        - content/dataset/sensors/lidar2d/index.md
+        - Hokuyo UST-10LX: content/dataset/sensors/lidar2d/hokuyo_ust-10lx.md
+      - 3D LiDARs:
+        - content/dataset/sensors/lidar3d/index.md
+        - Livox Mid 360: content/dataset/sensors/lidar3d/livox_mid-360.md
+        - Ouster OS1-64: content/dataset/sensors/lidar3d/ouster_os1-64.md
+        - RoboSense RS-Helios-5515: content/dataset/sensors/lidar3d/robosense_rs-helios-5515.md
+        - Velodyne VLP-16: content/dataset/sensors/lidar3d/velodyne_vlp-16.md
     - Sequences: 
       - content/dataset/sequences/index.md
       - Calibration Sequences: content/dataset/sequences/calibration_sequences.md

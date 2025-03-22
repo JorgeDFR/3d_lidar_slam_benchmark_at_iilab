@@ -1,4 +1,4 @@
-# Livox Mid 360
+# Livox Mid-360
 
 ## Absolute Trajectory Error (ATE)
 

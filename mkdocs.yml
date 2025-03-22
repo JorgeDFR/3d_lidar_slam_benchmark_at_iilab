@@ -126,28 +126,29 @@ markdown_extensions:
 # Page tree
 nav:
   - About: index.md
+  - Usage: content/usage.md
   - Dataset: 
     - content/dataset/index.md
-    - Mobile Robot Platform: content/dataset/mobile_robot_platform.md
+    - Mobile Robot: content/dataset/mobile_robot.md
     - Ground Truth: content/dataset/ground_truth.md
-    - Sensors:
-      - content/dataset/sensors/index.md
-      - Inertial Measurement Units (IMUs):
-        - content/dataset/sensors/imu/index.md
-        - Xsens MTi-630 AHRS: content/dataset/sensors/imu/xsens_mti-630-ahrs.md
-      - 2D Laser Scanners:
-        - content/dataset/sensors/lidar2d/index.md
-        - Hokuyo UST-10LX: content/dataset/sensors/lidar2d/hokuyo_ust-10lx.md
-      - 3D LiDARs:
-        - content/dataset/sensors/lidar3d/index.md
-        - Livox Mid 360: content/dataset/sensors/lidar3d/livox_mid-360.md
-        - Ouster OS1-64: content/dataset/sensors/lidar3d/ouster_os1-64.md
-        - RoboSense RS-Helios-5515: content/dataset/sensors/lidar3d/robosense_rs-helios-5515.md
-        - Velodyne VLP-16: content/dataset/sensors/lidar3d/velodyne_vlp-16.md
     - Sequences: 
       - content/dataset/sequences/index.md
       - Calibration Sequences: content/dataset/sequences/calibration_sequences.md
       - Benchmark Sequences: content/dataset/sequences/benchmark_sequences.md
+  - Sensors:
+    - content/sensors/index.md
+    - Inertial Measurement Units (IMUs):
+      - content/sensors/imu/index.md
+      - Xsens MTi-630 AHRS: content/sensors/imu/xsens_mti-630-ahrs.md
+    - 2D Laser Scanners:
+      - content/sensors/lidar2d/index.md
+      - Hokuyo UST-10LX: content/sensors/lidar2d/hokuyo_ust-10lx.md
+    - 3D LiDARs:
+      - content/sensors/lidar3d/index.md
+      - Livox Mid 360: content/sensors/lidar3d/livox_mid-360.md
+      - Ouster OS1-64: content/sensors/lidar3d/ouster_os1-64.md
+      - RoboSense RS-Helios-5515: content/sensors/lidar3d/robosense_rs-helios-5515.md
+      - Velodyne VLP-16: content/sensors/lidar3d/velodyne_vlp-16.md
   - Benchmark: 
     - content/benchmark/index.md
     - SLAM Algorithms: content/benchmark/slam_algorithms.md

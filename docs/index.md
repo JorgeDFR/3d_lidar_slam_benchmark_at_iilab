@@ -11,15 +11,32 @@
     Light Detection and Ranging (LiDAR),
     Simultaneous Localization and Mapping (SLAM).
 
-This repository contains all the documentation associated ... 
+This repository hosts the complete documentation and supporting resources for the project 
+["Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory"](.).
+The project evaluates state-of-the-art 3D LiDAR SLAM algorithms using data captured in 
+indoor environments. To this end, the study introduces the novel 
+[IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), which contains data from 
+four diverse 3D LiDAR sensors (Velodyne VLP-16, Ouster OS1-64, RoboSense RS-Helios-5515, and Livox Mid-360), 
+complemented by measurements from an IMU and wheel odometry.
+
+In parallel with the dataset, the project presents a detailed benchmark analysis of nine 
+leading SLAM algorithms. By comparing algorithm-generated odometry against high-accuracy 
+ground-truth data using metrics such as ATE, RTE, and RRE, the study provides valuable insights 
+into the performance, limitations, and integration of these algorithms in indoor environments.
+
+The primary aim of this website and GitHub repository is to support researchers in developing, 
+benchmarking, and applying 3D LiDAR-based SLAM solutions in indoor settings.
 As a result, the website includes the following information:
 
-- **[Dataset](content/dataset/index.md):** brief presentation of the
-  [IILABS 3D](https://rdm.inesctec.pt/dataset/nis-2025-001) dataset produced 
-  during the project for performing the benchmark study
-- **[Benchmark](content/benchmark/index.md):** summary on the components used for
-  the modifications to the platform
-- ... _To Be Completed (TBC)_
+- **[Usage](content/usage.md):** Step-by-step instructions for replicating the benchmark study 
+  using the provided scripts and dataset.
+- **[Dataset](content/dataset/index.md):** A detailed overview of the 
+  [IILABS 3D dataset]((https://rdm.inesctec.pt/dataset/nis-2025-001)), 
+  its structure, and key characteristics.
+- **[Sensors](content/sensors/index.md):** Specifications and technical details 
+  of the sensors used during data collection.
+- **[Benchmark](content/benchmark/index.md):** A summary of the benchmark scripts, 
+  experimental setup, and key results from the analysis.
 
 Lastly, this work is within the scope of the
 [Mobile Robotics Development Team (MRDT)](https://gitlab.inesctec.pt/mrdt/) in
@@ -115,10 +132,13 @@ contact one of the following contributors:
 - **URL:**
   [https://transparencia.gov.pt/en/fundos-europeus/prr/beneficiarios-projetos/projeto/02/C05-i01.02/2022.PC644867037-00000013/](https://transparencia.gov.pt/en/fundos-europeus/prr/beneficiarios-projetos/projeto/02/C05-i01.02/2022.PC644867037-00000013/)
 
-<!-- ## Citations
+## Citations
 
 ### Article
 
+TBC
+
+<!--
 **Plain Text**
 
 J.D. Ribeiro, R.B. Sousa, J.G. Martins, A.S. Aguiar, F.N. Santos and H.M. Sobreira,
@@ -138,6 +158,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
   pages     = {--},
   doi       = {},}
 ```
+-->
 
 ## Dataset
 
@@ -157,4 +178,4 @@ doi: [10.25747/VHNJ-WM80](doi.org/10.25747/VHNJ-WM80).
   publisher = {INESC TEC},
   doi       = {10.25747/VHNJ-WM80},
   note      = {[Dataset]},}
-``` -->
+```

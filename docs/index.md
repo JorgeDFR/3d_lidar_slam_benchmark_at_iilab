@@ -31,7 +31,7 @@ As a result, the website includes the following information:
 - **[Usage](content/usage.md):** Step-by-step instructions for replicating the benchmark study 
   using the provided scripts and dataset.
 - **[Dataset](content/dataset/index.md):** A detailed overview of the 
-  [IILABS 3D dataset]((https://rdm.inesctec.pt/dataset/nis-2025-001)), 
+  [IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), 
   its structure, and key characteristics.
 - **[Sensors](content/sensors/index.md):** Specifications and technical details 
   of the sensors used during data collection.
@@ -166,7 +166,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 
 J.D. Ribeiro, R.B. Sousa, J.G. Martins, A.S. Aguiar, F.N. Santos and H.M. Sobreira,
 "IILABS 3D: iilab Indoor LiDAR-based SLAM Dataset", \[Dataset\], INESC TEC, 2025, 
-doi: [10.25747/VHNJ-WM80](doi.org/10.25747/VHNJ-WM80).
+doi: [10.25747/VHNJ-WM80](https://doi.org/10.25747/VHNJ-WM80).
 
 **BibTex**
 

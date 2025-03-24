@@ -150,7 +150,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 ```bibtex
 @ARTICLE{ribeiro2025benchmark,
   author    = {Ribeiro, J.D. and Sousa, R.B. and Martins, J.G. and Aguiar, A.S. and Santos, F.N. and Sobreira, H.M.},
-  title     = {Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory},
+  title     = {{I}ndoor {B}enchmark of {3D} {LiDAR} {SLAM} at iilab - {I}ndustry and {I}nnovation {L}aboratory},
   journal   = {IEEE Access}, 
   year      = {2025},
   volume    = {},
@@ -173,7 +173,7 @@ doi: [10.25747/VHNJ-WM80](https://doi.org/10.25747/VHNJ-WM80).
 ```bibtex
 @MISC{ribeiro2025iilabs3d,
   author    = {Ribeiro, J.D. and Sousa, R.B. and Martins, J.G. and Aguiar, A.S. and Santos, F.N. and Sobreira, H.M.},
-  title     = {IILABS 3D: iilab Indoor LiDAR-based SLAM Dataset},
+  title     = {{IILABS 3D}: iilab {I}ndoor {LiDAR}-based {SLAM} {D}ataset},
   year      = {2025},
   publisher = {INESC TEC},
   doi       = {10.25747/VHNJ-WM80},

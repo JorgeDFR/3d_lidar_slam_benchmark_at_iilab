@@ -137,22 +137,21 @@ nav:
       - Benchmark Sequences: content/dataset/sequences/benchmark_sequences.md
   - Sensors:
     - content/sensors/index.md
-    - Inertial Measurement Units (IMUs):
-      - content/sensors/imu/index.md
-      - Xsens MTi-630 AHRS: content/sensors/imu/xsens_mti-630-ahrs.md
-    - 2D Laser Scanners:
-      - content/sensors/lidar2d/index.md
-      - Hokuyo UST-10LX: content/sensors/lidar2d/hokuyo_ust-10lx.md
     - 3D LiDARs:
       - content/sensors/lidar3d/index.md
       - Livox Mid 360: content/sensors/lidar3d/livox_mid-360.md
       - Ouster OS1-64: content/sensors/lidar3d/ouster_os1-64.md
       - RoboSense RS-Helios-5515: content/sensors/lidar3d/robosense_rs-helios-5515.md
       - Velodyne VLP-16: content/sensors/lidar3d/velodyne_vlp-16.md
+    - 2D Laser Scanners:
+      - content/sensors/lidar2d/index.md
+      - Hokuyo UST-10LX: content/sensors/lidar2d/hokuyo_ust-10lx.md
+    - Inertial Measurement Units (IMUs):
+      - content/sensors/imu/index.md
+      - Xsens MTi-630 AHRS: content/sensors/imu/xsens_mti-630-ahrs.md
   - Benchmark: 
     - content/benchmark/index.md
     - SLAM Algorithms: content/benchmark/slam_algorithms.md
-    - Docker: content/benchmark/docker.md
     - Results: 
       - content/benchmark/results/index.md
       - 3D LiDAR Sensors:
@@ -170,4 +169,5 @@ nav:
         - GLIM: content/benchmark/results/slam_algorithms/glim.md
         - Kinematic-ICP: content/benchmark/results/slam_algorithms/kinematic_icp.md
         - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md
+    - Docker Environment: content/benchmark/docker.md
   - Preprint: content/preprint.md

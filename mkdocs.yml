@@ -170,3 +170,4 @@ nav:
         - GLIM: content/benchmark/results/slam_algorithms/glim.md
         - Kinematic-ICP: content/benchmark/results/slam_algorithms/kinematic_icp.md
         - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md
+  - Preprint: content/preprint.md

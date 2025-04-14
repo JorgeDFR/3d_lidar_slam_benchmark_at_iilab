@@ -2,7 +2,7 @@
 
 !!! Abstract
 
-    TBC
+    This paper presents the IILABS 3D dataset, a novel and publicly available resource designed to address current limitations in indoor benchmarking of 3D LiDAR-based Simultaneous Localization and Mapping (SLAM) algorithms. Existing SLAM datasets often focus on outdoor environments, rely on a single type of LiDAR sensor, or lack ground-truth data suitable for evaluating diverse indoor conditions. IILABS 3D fills this gap by providing a sensor-rich, indoor-exclusive dataset recorded in a controlled laboratory environment using a wheeled mobile robot platform. It includes four heterogeneous 3D LiDAR sensors -- Velodyne VLP-16, Ouster OS1-64, RoboSense RS-Helios-5515, and Livox Mid-360 -- featuring both mechanical spinning and non-repetitive scanning patterns, as well as an IMU and wheel odometry. The dataset also features calibration sequences, challenging benchmark trajectories, and high-precision ground-truth poses captured with a Motion Capture (MoCap) system. By combining diverse sensor technologies, extensive calibration data, and carefully designed indoor scenarios, IILABS 3D enables more comprehensive and reproducible evaluation of LiDAR-based SLAM algorithms, fostering innovation in autonomous navigation within complex indoor environments. The dataset information and associated tools are available at project webpage [jorgedfr.github.io/3d_lidar_slam_benchmark_at_iilab](https://jorgedfr.github.io/3d_lidar_slam_benchmark_at_iilab).
 
     **Keywords:**
     dataset,
@@ -148,8 +148,8 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 **BibTex**
 
 ```bibtex
-@ARTICLE{ribeiro2025benchmark,
-  author    = {Ribeiro, J.D. and Sousa, R.B. and Martins, J.G. and Aguiar, A.S. and Santos, F.N. and Sobreira, H.M.},
+@ARTICLE{ribeiro:2025:benchmark,
+  author    = {J.D. Ribeiro and R.B. Sousa and J.G. Martins and A.S. Aguiar and F.N. Santos and H.M. Sobreira},
   title     = {{I}ndoor {B}enchmark of {3D} {LiDAR} {SLAM} at iilab - {I}ndustry and {I}nnovation {L}aboratory},
   journal   = {IEEE Access}, 
   year      = {2025},
@@ -160,7 +160,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 ```
 -->
 
-## Dataset
+### Dataset
 
 **Plain Text**
 
@@ -171,8 +171,8 @@ doi: [10.25747/VHNJ-WM80](https://doi.org/10.25747/VHNJ-WM80).
 **BibTex**
 
 ```bibtex
-@MISC{ribeiro2025iilabs3d,
-  author    = {Ribeiro, J.D. and Sousa, R.B. and Martins, J.G. and Aguiar, A.S. and Santos, F.N. and Sobreira, H.M.},
+@MISC{ribeiro:2025:iilabs3d:dataset,
+  author    = {J.D. Ribeiro and R.B. Sousa and J.G. Martins and A.S. Aguiar and F.N. Santos and H.M. Sobreira},
   title     = {{IILABS 3D}: iilab {I}ndoor {LiDAR}-based {SLAM} {D}ataset},
   year      = {2025},
   publisher = {INESC TEC},

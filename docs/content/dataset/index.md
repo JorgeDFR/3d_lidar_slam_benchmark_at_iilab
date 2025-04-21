@@ -10,7 +10,6 @@ The IILABS 3D dataset was collected in the Industry and Innovation Laboratory an
 - :material-compass: **Additional Sensors**: 2D LiDAR, IMU, and wheel odometry data
 - :material-map-marker-path: **Diverse Sequences**: Both calibration sequences and challenging benchmark trajectories
 - :material-ruler: **High-Precision Ground Truth**: Sub-millimeter accuracy from a 24-camera OptiTrack system
-- :material-open-source-initiative: **Open Access**: Freely available for research purposes
 
 ## Sensors
 
@@ -18,10 +17,10 @@ The dataset includes data from the following sensors:
 
 ### 3D LiDARs
 
-- **Livox Mid-360**: Solid-state LiDAR with non-repetitive scanning pattern
-- **Ouster OS1-64 RevC**: 64-channel spinning LiDAR with 360° horizontal FOV
-- **RoboSense RS-HELIOS-5515**: 32-channel spinning LiDAR with 360° horizontal FOV
-- **Velodyne VLP-16**: 16-channel spinning LiDAR with 360° horizontal FOV
+- **Livox Mid-360**: Solid-state LiDAR with an non-repetitive scanning pattern
+- **Ouster OS1-64 RevC**: 64-channel mechanical spinning LiDAR (45° uniform vertical FOV)
+- **RoboSense RS-HELIOS-5515**: 32-channel mechanical spinning LiDAR (70° non-uniform vertical FOV)
+- **Velodyne VLP-16**: 16-channel mechanical spinning LiDAR (30° uniform vertical FOV)
 
 ### Additional Sensors
 

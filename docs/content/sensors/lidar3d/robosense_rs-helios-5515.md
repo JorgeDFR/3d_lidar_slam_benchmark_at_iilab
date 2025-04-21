@@ -10,3 +10,13 @@
 - [RoboSense Helios-5515 User Manual](../../../assets/sensors/lidar3d/robosense_rs-helios-5515/robosense_rs-helios-5515_user-manual.pdf)
 - [RoboSense Helios-Series Datasheet](../../../assets/sensors/lidar3d/robosense_rs-helios-5515/robosense_rs-helios-series_datasheet.pdf)
 - [RoboSense Helios-5515 3D Models (STEP)](../../../assets/sensors/lidar3d/robosense_rs-helios-5515/robosense_rs-helios-5515_3d-models.zip)
+
+## Gallery
+
+<div class="grid" markdown>
+
+![](../../../assets/sensors/lidar3d/robosense_rs-helios-5515/robosense_rs_helios_5515.jpeg)
+
+![](../../../assets/sensors/lidar3d/robosense_rs-helios-5515/robosense_fov_modified.png)
+
+</div>

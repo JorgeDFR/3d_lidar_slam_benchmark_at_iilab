@@ -131,7 +131,7 @@ Replace `<output_bag_file_name>` with your desired output bag file name.
 
 **Recording Odometry Trajectory for MOLA-LO**
 
-For MOLA-LO, set an environment variable to use the LiDAR frame instead of the default `base_link` frame. This step is necessary because MOLA-LO expects the robot frame to be `base_link`, while the IILABS 3D dataset uses `eve/base_link`. The use the `mola-lidar-odometry-cli` command. For more informations regarding this tool please refer to the [MOLA](https://docs.mola-slam.org/latest/mola_lo_apps.html) main documentation.
+For MOLA-LO, set an environment variable to use the LiDAR frame instead of the default `base_link` frame. This step is necessary because MOLA-LO expects the robot frame to be `base_link`, while the IILABS 3D dataset uses `eve/base_link`. Then use the `mola-lidar-odometry-cli` command. For more informations regarding this tool please refer to the [MOLA](https://docs.mola-slam.org/latest/mola_lo_apps.html) main documentation.
 
 ```sh
 # Set environment variable to use the LiDAR frame instead of base_link

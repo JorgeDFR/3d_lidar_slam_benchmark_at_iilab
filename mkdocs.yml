@@ -132,7 +132,6 @@ nav:
     - Mobile Robot: content/dataset/mobile_robot.md
     - Ground Truth: content/dataset/ground_truth.md
     - Sequences: 
-      - content/dataset/sequences/index.md
       - Calibration Sequences: content/dataset/sequences/calibration_sequences.md
       - Benchmark Sequences: content/dataset/sequences/benchmark_sequences.md
   - Sensors:
@@ -170,4 +169,5 @@ nav:
         - Kinematic-ICP: content/benchmark/results/slam_algorithms/kinematic_icp.md
         - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md
     - Docker Environment: content/benchmark/docker.md
+    - Install Docker: content/benchmark/install_docker.md
   - Preprint: content/preprint.md

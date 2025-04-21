@@ -9,3 +9,13 @@
 - [Velodyne VLP-16 User Manual](../../../assets/sensors/lidar3d/velodyne_vlp-16/velodyne_vlp-16_user-manual.pdf)
 - [Velodyne VLP-16 Puck Datasheet](../../../assets/sensors/lidar3d/velodyne_vlp-16/velodyne_vlp-16_rev-k_puck_datasheet.pdf)
 - [Velodyne VLP-16 Interface Box](../../../assets/sensors/lidar3d/velodyne_vlp-16/velodyne_vlp-16_interface-box.pdf)
+
+## Gallery
+
+<div class="grid" markdown>
+
+![](../../../assets/sensors/lidar3d/velodyne_vlp-16/velodyne_vlp_16.jpg)
+
+![](../../../assets/sensors/lidar3d/velodyne_vlp-16/velodyne_fov_modified.png)
+
+</div>

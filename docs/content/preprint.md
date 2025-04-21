@@ -1,8 +1,6 @@
 # Preprint
 
-TBC
-
-<!-- <div>
+<div>
   <object data="../../assets/preprint/preprint.pdf" width="100%" type="application/pdf"
           style="aspect-ratio:297/210;">
     <p>This browser does not support PDF! Click
@@ -13,4 +11,4 @@ TBC
 ## Documents
 
 - [pdf](../assets/preprint/preprint.pdf)
-- [latex](https://github.com/jorgedfr/3d_lidar_slam_benchmark/tree/main/docs/assets/preprint/) -->
+- [latex](https://github.com/jorgedfr/3d_lidar_slam_benchmark/tree/main/docs/assets/preprint/)

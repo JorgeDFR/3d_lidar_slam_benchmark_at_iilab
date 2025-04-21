@@ -36,10 +36,10 @@ To download a specific sequence for a specific sensor:
 iilabs3d download <output_directory> <sequence_name> <sensor_name>
 ```
 
-For example, to download the "loop" benchmark sequence for the Livox Mid-360 sensor:
+For example, to download the *loop* benchmark sequence for the Livox Mid-360 sensor:
 
 ```bash
-iilabs3d download ~/data bench/loop livox_mid-360
+iilabs3d download ~/data loop livox_mid_360
 ```
 
 To download all benchmark sequences for all sensors:

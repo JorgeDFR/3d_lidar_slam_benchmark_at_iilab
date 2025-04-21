@@ -74,7 +74,7 @@ iilabs3d list-sequences
 iilabs3d list-sensors
 
 # Download a specific sequence for a specific sensor
-iilabs3d download ~/data bench/loop livox_mid-360
+iilabs3d download ~/data loop livox_mid_360
 ```
 
 !!! tip "Downloading All Data"
@@ -83,4 +83,5 @@ iilabs3d download ~/data bench/loop livox_mid-360
     iilabs3d download ~/data bench all
     ```
 
-For more information on using the toolkit, see the [Usage](../usage.md) page.
+!!! info "Additional Information"
+    For more information on using the toolkit, see the [IILABS 3D Toolkit](https://github.com/JorgeDFR/iilabs3d-toolkit) GitHub page.

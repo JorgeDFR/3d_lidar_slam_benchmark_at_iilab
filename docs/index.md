@@ -12,7 +12,7 @@
     Simultaneous Localization and Mapping (SLAM).
 
 This repository hosts the complete documentation and supporting resources for the project 
-["Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory"](.).
+["Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory"](index.md).
 The project evaluates state-of-the-art 3D LiDAR SLAM algorithms using data captured in 
 indoor environments. To this end, the study introduces the novel 
 [IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), which contains data from 

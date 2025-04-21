@@ -65,7 +65,7 @@ The benchmark uses Docker to ensure a consistent environment for all SLAM algori
 - :material-memory: 16GB RAM recommended for optimal performance
 
 !!! info "Guide for installing Docker and other tools in Ubuntu 20.04"
-    For more detailed information about the Docker installation and additional setups, please refer to the [Install Docker](install_docker.md) section.
+    For more detailed information about the Docker installation and additional setups, please refer to the [Install Docker](benchmark/install_docker.md) section.
 
 ### Clone the Repository
 
@@ -232,4 +232,4 @@ The benchmark evaluates nine state-of-the-art 3D LiDAR-based SLAM algorithms:
 8. **Kinematic-ICP**: An LiDAR Odometry ICP pipeline with kinematic constraints for wheeled robots
 9. **MOLA-LO**: A modular optimization framework for localization and mapping using LiDAR Odometry (LO)
 
-For detailed benchmark results, please refer to the [Benchmark Results](../benchmark/results/index.md) section.
+For detailed benchmark results, please refer to the [Benchmark Results](benchmark/results/index.md) section.

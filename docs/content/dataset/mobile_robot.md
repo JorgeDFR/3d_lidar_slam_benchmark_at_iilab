@@ -141,11 +141,15 @@ The robot uses the following reference frames:
 
 - **base_link**: The main reference frame, located at the center of the robot wheels
 - **base_footprint**: Located directly below *base_link*, on the ground plane
-- **imu**: Located at the center of the IMU
-- **lidar_***: Located at the center of each LiDAR sensor (e.g., lidar_livox_mid_360)
+- **lidar3d**: Located at the center of each 3D LiDAR sensor
+- **laser**: Located at the center of the 2D LiDAR sensor
+- **imu_link**: Located at the center of the IMU
 
 !!! info "Transformations"
-    The transformations between these reference frames are provided both in the *tf* topic in the rosbag files and in the calibration files included with the dataset.
+    The transformations between these reference frames are provided both in the *tf* topic in the rosbag files and in the calibration files included with the dataset. The transformations provided were calculated using the distances specified in the Computer Aided Design (CAD) 3D models.
+
+!!! warning "Robot Namespae"
+    All the reference frames are inside the mobile robot namespace *eve*. As such, in the rosbags files, the *tf* reference frames have this namespace as a prefix (e.g., *eve/base_link*).
 
 ## Gallery
 

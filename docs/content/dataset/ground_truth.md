@@ -61,7 +61,7 @@ This high level of precision makes the ground truth data suitable for rigorous e
 Ground truth data is included with each sequence in the dataset. When you download a sequence using the IILABS 3D toolkit, the ground truth data is provided as a `ground_truth.tum` file in the sequence directory:
 
 ```
-<save_directory>/iilabs3d-dataset/<sequence_prefix>/<sequence_name>/ground_truth.tum
+<save_directory>/iilabs3d-dataset/<sequence_prefix>/<sensor_name>/<sequence_name>/ground_truth.tum
 ```
 
 You can use this ground truth data to evaluate the performance of SLAM algorithms by comparing their estimated trajectories with the ground truth using the evaluation tools provided in the IILABS 3D toolkit.

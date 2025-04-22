@@ -1,9 +1,5 @@
 # Docker Environment
 
-This page provides information about the Docker environment used for benchmarking the 3D LiDAR-based SLAM algorithms in the IILABS 3D dataset.
-
-## Overview
-
 To ensure reproducibility and consistency in the benchmarking process, we provide a Docker environment that contains all the necessary dependencies and configurations for running the SLAM algorithms. This Docker environment allows researchers to easily replicate our benchmarking results and test their own algorithms under the same conditions.
 
 ## Docker Images
@@ -45,43 +41,50 @@ Both images include:
 
 ### Setup Instructions
 
-1. Clone the repository:
+Clone the repository:
+
+```bash
+git clone https://github.com/JorgeDFR/3d_lidar_slam_benchmark_at_iilab.git
+cd 3d_lidar_slam_benchmark_at_iilab/docker
+```
+
+=== "ROS 1 (Noetic)"
+
+    Build the Docker image:
 
     ```bash
-    git clone https://github.com/JorgeDFR/3d_lidar_slam_benchmark_at_iilab.git
-    cd 3d_lidar_slam_benchmark_at_iilab/docker
+    docker compose build ros1_noetic
     ```
 
-2. Build the Docker images:
+    Start the Docker container:
 
     ```bash
-    # Build the image for ROS 1 (for A-LOAM, LeGO-LOAM-BOR, LIORF, DLIO)
-    docker compose build ros1_noetic
+    docker compose up ros1_noetic -d
+    ```
 
-    # Build the image for ROS 2 (for KISS-ICP, Kinematic-ICP, GLIM, VineSLAM, MOLA-LO)
+    Access the Docker container:
+
+    ```bash
+    docker exec -it 3d_slam_ros1 bash
+    ```
+
+=== "ROS 2 (Humble)"
+
+    Build the Docker image:
+
+    ```bash
     docker compose build ros2_humble
     ```
 
-3. Start the Docker containers:
+    Start the Docker container:
 
     ```bash
-    # Start ROS 1 container
-    docker compose up ros1_noetic -d
-
-    # Start ROS 2 container
     docker compose up ros2_humble -d
-
-    # Or start both containers
-    docker compose up -d
     ```
 
-4. Access the Docker containers:
+    Access the Docker container:
 
     ```bash
-    # Access ROS 1 container
-    docker exec -it 3d_slam_ros1 bash
-
-    # Access ROS 2 container
     docker exec -it 3d_slam_ros2 bash
     ```
 
@@ -91,53 +94,67 @@ Both images include:
     ./docker/setup_xhost.sh
     ```
 
+!!! warning "Dataset Directory"
+    The provided Docker Compose file is configured to mount the `${HOME}/slam_data` directory, allowing containerized access to the dataset files. To ensure proper functionality, save your dataset in this directory. Alternatively, you can modify the `docker-compose.yml` file to specify a different path if needed.
+    
 ## Running SLAM Algorithms
 
-### ROS 1 Algorithms
+=== "ROS 1 (Noetic)"
 
-Inside the ROS 1 container:
+    In one terminal, set the enviroment variables to select the algorithm and 3D LiDAR sensor, and start the SLAM algorithm:
 
-```bash
-# Set environment variables
-export SLAM_CONF=aloam  # Options: aloam, lego_loam_bor, liorf, dlio
-export SLAM_SENSOR=velodyne_vlp_16  # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
+    ```bash
+    # Set environment variables
+    export SLAM_CONF=<algorithm_name>  
+    # Options: aloam, lego_loam_bor, liorf, dlio
+    export SLAM_SENSOR=<sensor_name>  
+    # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
 
-# Start the SLAM algorithm
-roslaunch slam_benchmark_ros1_conf slam_benchmark.launch
+    # Start the SLAM algorithm
+    roslaunch slam_benchmark_ros1_conf slam_benchmark.launch
+    ```
 
-# In another terminal, play the rosbag
-rosbag play <path_to_bagfile>.bag
-```
+    In another terminal, play the rosbag of the desired sequence:
 
-### ROS 2 Algorithms
+    ```bash
+    rosbag play <rosbag_file_path>
+    ```
 
-Inside the ROS 2 container:
+=== "ROS 2 (Humble)"
 
-```bash
-# Set environment variables
-export SLAM_CONF=kiss_icp  # Options: kiss_icp, kinematic_icp, glim, vineslam, mola_lo
-export SLAM_SENSOR=velodyne_vlp_16  # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
+    In one terminal, set the enviroment variables to select the algorithm and 3D LiDAR sensor, and start the SLAM algorithm:
 
-# Start the SLAM algorithm
-ros2 launch slam_benchmark_ros2_conf slam_benchmark.launch.xml
+    ```bash
+    # Set environment variables
+    export SLAM_CONF=<algorithm_name>  
+    # Options: aloam, lego_loam_bor, liorf, dlio
+    export SLAM_SENSOR=<sensor_name>  
+    # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
 
-# In another terminal, play the rosbag
-ros2 bag play <path_to_bagfile>
-```
+    # Start the SLAM algorithm
+    ros2 launch slam_benchmark_ros2_conf slam_benchmark.launch.xml
+    ```
+    In another terminal, play the rosbag of the desired sequence:
 
-## Advanced Features
+    ```bash
+    ros2 bag play <rosbag_file_path>
+    ```
 
-### Offline Processing Mode
+## Offline Processing Mode
 
-Several SLAM algorithms support an offline mode that processes rosbag files faster than real-time:
+Alternatively, several SLAM algorithms support an offline mode that processes rosbag files faster than real-time without losing messages:
 
-```bash
-# ROS 1
-roslaunch slam_benchmark_ros1_conf slam_benchmark.launch run_offline:=true rosbag_path:=<rosbag_file_path>
+=== "ROS 1 (Noetic)"
 
-# ROS 2
-ros2 launch slam_benchmark_ros2_conf slam_benchmark.launch.xml run_offline:=true rosbag_path:=<rosbag_file_path>
-```
+    ```bash
+    roslaunch slam_benchmark_ros1_conf slam_benchmark.launch run_offline:=true rosbag_path:=<rosbag_file_path>
+    ```
+
+=== "ROS 2 (Humble)"
+
+    ```bash
+    ros2 launch slam_benchmark_ros2_conf slam_benchmark.launch.xml run_offline:=true rosbag_path:=<rosbag_file_path>
+    ```
 
 !!! note "Supported Algorithms for Offline Mode"
     The following algorithms currently support offline processing:
@@ -147,17 +164,21 @@ ros2 launch slam_benchmark_ros2_conf slam_benchmark.launch.xml run_offline:=true
     - Kinematic-ICP
     - MOLA-LO
 
-### Recording Odometry Trajectories
+## Recording Odometry Trajectories
 
-To capture the odometry trajectory generated by the SLAM algorithms:
+To record the odometry trajectory generated by the SLAM algorithms, run the following command in another terminal:
 
-```bash
-# ROS 1
-rosbag record -O <output_bag_file_name> /slam_odom
+=== "ROS 1 (Noetic)"
 
-# ROS 2
-ros2 bag record -o <output_bag_file_name> /slam_odom
-```
+    ```bash
+    rosbag record -O <output_bag_file_name> /slam_odom
+    ```
+
+=== "ROS 2 (Humble)"
+
+    ```bash
+    ros2 bag record -o <output_bag_file_name> /slam_odom
+    ```
 
 !!! warning "MOLA-LO Special Case"
     For MOLA-LO, use the following command:

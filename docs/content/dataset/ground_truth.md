@@ -2,7 +2,11 @@
 
 The ground truth data for the IILABS 3D dataset was captured using an OptiTrack Motion Capture (MoCap) system featuring 24 high-resolution PrimeX 22 cameras. This system was installed in Nav A, Floor 0 at the Industry and Innovation Laboratory.
 
-### System Components
+## Overview
+
+![Overview](../../assets/dataset/ground_truth/overview.png)
+
+## System Components
 
 The OptiTrack system consists of the following components:
 
@@ -11,7 +15,7 @@ The OptiTrack system consists of the following components:
 - :computer: Secondary Ubuntu machine running the NatNet 4 ROS driver
 - :timer: Network Time Protocol (NTP) for temporal synchronization
 
-### Data Collection Process
+## Data Collection Process
 
 The ground truth data collection process involved several steps:
 

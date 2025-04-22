@@ -1,5 +1,17 @@
 # SLAM Algorithms
 
+The benchmark evaluates nine state-of-the-art 3D LiDAR-based SLAM algorithms:
+
+1. **A-LOAM**: An advanced implementation of LOAM (LiDAR Odometry and Mapping)
+2. **LeGO-LOAM-BOR**: A fork of LeGO-LOAM with good software engineering practices to make the code more readable and efficient
+3. **LIORF**: A fork of LIO-SAM which removes the feature extraction module and makes it easier to adapt other sensors
+4. **DLIO**: A lightweight LiDAR-Inertial Odometry (LIO) algorithm with a coarse-to-fine approach in constructing continuous-time trajectories for precise motion correction
+5. **VineSLAM**: A localization and mapping algorithm designed for challenging agricultural environments
+6. **KISS-ICP**: An LiDAR Odometry ICP pipeline with the KISS principle (Keep It Simple and Scalable)
+7. **GLIM**: An versatile and extensible range-based 3D mapping framework
+8. **Kinematic-ICP**: An LiDAR Odometry ICP pipeline with kinematic constraints for wheeled robots
+9. **MOLA-LO**: A modular optimization framework for localization and mapping using LiDAR Odometry (LO)
+
 | SLAM Algorithm                                                                 | Code Repository                                                          | ROS Version    | VLP-16 | OS1-64 | RS-5515 | Mid-360 | IMU | Wheel Odom | Loop Closure  | Year |
 | :----------------------------------------------------------------------------- | :----------------------------------------------------------------------- | :------------: | :----: | :----: | :-----: | :-----: | :-: | :--------: | :-: | :--: |
 | [**LOAM**](https://ri.cmu.edu/pub_files/2014/7/Ji_LidarMapping_RSS2014_v8.pdf) | [A-LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)                | Noetic (ROS 1) | X      | X      | X       | -       | -   | -          | -   | 2014 |

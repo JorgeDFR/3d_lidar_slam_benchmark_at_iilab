@@ -1,0 +1,3 @@
+[submodule "external/5dpo_drivers_interfaces"]
+	path = external/5dpo_drivers_interfaces
+	url = https://github.com/5dpo/5dpo_drivers_interfaces

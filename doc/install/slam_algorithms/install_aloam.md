@@ -2,7 +2,7 @@
 
 This guide provides step-by-step instructions to install A-LOAM from source on Ubuntu 20.04.
 
-A-LOAM is an Advanced implementation of LOAM (J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time), which uses Eigen and Ceres Solver to simplify code structure.
+A-LOAM is an Advanced implementation of LOAM (J. Zhang and S. Singh. LOAM: LiDAR Odometry and Mapping in Real-time), which uses Eigen and Ceres Solver to simplify code structure.
 
 - **Official Documentation**: 
   - [LOAM GitHub Repository](https://github.com/laboshinl/loam_velodyne)

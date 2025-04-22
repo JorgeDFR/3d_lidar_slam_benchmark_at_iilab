@@ -1,8 +1,8 @@
 # Dataset
 
-The IILABS 3D dataset was collected in the Industry and Innovation Laboratory and both calibration and benchmark sequences. Each sequence contains data from multiple sensors, complemented by high-precision ground truth obtained via a Motion Capture (MoCap) system.
+The IILABS 3D dataset was collected in the Industry and Innovation Laboratory. The dataset is composed by calibration and benchmark sequences. Each sequence contains data from multiple sensors, complemented by high-precision ground truth obtained via a Motion Capture (MoCap) system.
 
-![Dataset Overview](../../assets/dataset/dataset_overview.png){ loading=lazy }
+![Dataset Overview](../../assets/dataset/dataset_overview.png)
 
 ### Key Features
 
@@ -18,13 +18,13 @@ The dataset includes data from the following sensors:
 ### 3D LiDARs
 
 - **Livox Mid-360**: Solid-state LiDAR with an non-repetitive scanning pattern
-- **Ouster OS1-64 RevC**: 64-channel mechanical spinning LiDAR (45° uniform vertical FOV)
-- **RoboSense RS-HELIOS-5515**: 32-channel mechanical spinning LiDAR (70° non-uniform vertical FOV)
-- **Velodyne VLP-16**: 16-channel mechanical spinning LiDAR (30° uniform vertical FOV)
+- **Ouster OS1-64 RevC**: 64-channel mechanical spinning LiDAR (45° uniform vertical FoV)
+- **RoboSense RS-HELIOS-5515**: 32-channel mechanical spinning LiDAR (70° non-uniform vertical FoV)
+- **Velodyne VLP-16**: 16-channel mechanical spinning LiDAR (30° uniform vertical FoV)
 
 ### Additional Sensors
 
-- **Hokuyo UST-10LX-H01**: 2D LiDAR
+- **Hokuyo UST-10LX**: 2D LiDAR
 - **Xsens MTi-630 AHRS**: Inertial Measurement Unit (IMU)
 - **Faulhaber 2342 wheel encoders**: 64:1 gear ratio, 12 Counts Per Revolution (CPR)
 
@@ -40,6 +40,32 @@ The dataset provides three types of data:
 2. **Ground Truth Data**: Available as text files in TUM format (8 columns: timestamp in seconds, three columns for position coordinates, and four columns for orientation in quaternion format).
 
 3. **Calibration Files**: Supplied in YAML format, containing the calibration parameters for each sensor.
+
+!!! tip "Convert dataset to ROS 2"
+    Even though the dataset is provided in ROS 1 bag files, we provide a way to convert to ROS 2 bag formats in our [IILABS 3D toolkit](https://github.com/JorgeDFR/iilabs3d-toolkit).
+
+## ROS Topics and Explanation of Each Message
+
+| <div style="width:9em">Topic Name</div> | Message Type | Description | Frequency |
+| :----------------- | :-------------------------------------- | :------------------------------------- | :---------- |
+| /eve/lidar3d       | sensor_msgs/PointCloud2                 | raw pointcloud data (Velodyne VLP-16 / RoboSense RS-Helios-5515 / Livox Mid-360) | 10Hz |
+| /eve/ouster/points | sensor_msgs/PointCloud2                 | raw pointcloud data (Ouster OS1-64)    | 10Hz        |
+| /eve/imu/data      | sensor_msgs/Imu                         | raw IMU data (Xsens Mti-630)           | 400Hz       |
+| /eve/ouster/imu    | sensor_msgs/Imu                         | raw IMU data (Ouster OS1-64)           | 100Hz       |
+| /eve/livox/imu     | sensor_msgs/Imu                         | raw IMU data (Livox Mid-360)           | 200Hz       |
+| /eve/scan          | sensor_msgs/LaserScan                   | raw laser scan data (Hokuyo UST-10LX)  | 40Hz        |
+| /eve/odom          | nav_msgs/Odometry                       | wheel odometry processed data          | 100Hz       |
+| /eve/motors_enc    | sdpo_drivers_interfaces/MotEncArrayROS1 | raw motor encoders data                | 100Hz       |
+| /eve/motors_ref    | sdpo_drivers_interfaces/MotRefArrayROS1 | motor reference speeds                 | -           |
+| /tf                | tf2_msgs/TFMessage                      | reference frame transformations        | -           |
+| /tf_static         | tf2_msgs/TFMessage                      | static reference frame transformations | -           |
+
+!!! warning "Custom ROS Messages"
+    The messages for the motor encoders data (`sdpo_drivers_interfaces/MotEncArrayROS1`) and motor reference speeds (`sdpo_drivers_interfaces/MotRefArrayROS1`) are custom ROS messages. These message definitions are included in this repository as a Git submodule via the [5dpo_drivers_interfaces](https://github.com/5dpo/5dpo_drivers_interfaces) package, which supports both ROS 1 and ROS 2. If you are cloning this repository, make sure to also initialize and update the submodules:
+    ```bash
+    git submodule update --init --recursive
+    ```
+    Moreover, when converting the dataset ROS bags to ROS 2 using the [IILABS 3D Toolkit](https://github.com/JorgeDFR/iilabs3d-toolkit), the message type of these topics is automatically adjusted for the ROS 2 equivalent.
 
 ## Data Collection Method
 

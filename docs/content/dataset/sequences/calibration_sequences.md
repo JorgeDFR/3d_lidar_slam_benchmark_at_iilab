@@ -1,78 +1,104 @@
 # Calibration Sequences
 
-TBC
+Calibration sequences are specifically designed to validate and optimize the calibration parameters provided with the dataset. As such they serve the following purposes:
 
-<!-- Calibration sequences are designed to help researchers test and calibrate their SLAM algorithms in controlled conditions.
+- :material-check-circle: **Validation**: Verify the accuracy of the provided calibration parameters
+- :material-tune: **Optimization**: Provide data for researchers to derive more optimal calibration parameters
 
-## Purpose of Calibration Sequences
+!!! info "Calibration Parameters"
+    The IILABS 3D dataset includes pre-calibrated parameters in YAML format for all sensors. These calibration sequences provide a way to validate these parameters or derive new ones if needed.
 
-Calibration sequences serve several important purposes:
+## IMU Intrinsic Calibration
 
-- :material-tune: **Algorithm Initialization**: Initialize and test algorithms in simple, controlled environments
-- :material-tune-variant: **Parameter Tuning**: Standardized data for tuning algorithm parameters
-- :material-radar: **Sensor Evaluation**: Evaluate different sensor characteristics and their impact
-- :material-file-compare: **Reference Data**: Compare algorithm behavior across different sensors and configurations
+To characterize each IMU's noise and bias behaviour, we recorded a three-hour stationary sequence for each of the following sensors:
 
-## Available Calibration Sequences
+- Xsens MTi-630 AHRS (external IMU)  
+- Ouster OS1-64 (internal IMU)  
+- Livox Mid-360 (internal IMU)  
 
-The IILABS 3D dataset includes the following calibration sequences:
+From these recordings, Allan-variance plots can be generated to estimate the noise and bias of both the gyroscope and accelerometer. In our benchmark, we used the [Allan Variance ROS package](https://github.com/ori-drs/allan_variance_ros) to estimate these values and provide them in the YAML calibration files.
+For illustrative purposes, the following figures represent the Allan-variance plots obtained for the Xsens MTi-630 AHRS IMU.
 
-### Straight Line
+<div class="grid" markdown>
+![](../../../assets/dataset/sequences/allan_variance_xsens_mti_630_gyroscope.png)
 
-![Straight Line Sequence](../../assets/images/sequences/straight_line.jpg){ loading=lazy }
+![](../../../assets/dataset/sequences/allan_variance_xsens_mti_630_accelerometer.png)
+</div>
 
-**Description**: A simple straight-line trajectory where the robot moves forward for approximately 5 meters and then returns along the same path.
+!!! info "Parameter Adjustment"
+    To ensure a safe margin in the benchmark study, the YAML file values were inflated – bias values by a factor of 10 and white noise values by a factor of 5.
 
-**Purpose**: This sequence is useful for testing basic odometry estimation and evaluating drift in the simplest case of linear motion.
+## Extrinsic Calibration (LiDAR – IMU)
 
-**Duration**: Approximately 30 seconds
+To determine the rigid‐body transform between each 3D LiDAR and the IMU, we recorded two complementary sequences:
 
-**Challenges**: Minimal - designed for basic algorithm testing
+### Full Excite Sequence
 
-### Square
+- **Setup**: Robot suspended in free space  
+- **Motion**: Continuous rotations about the z-axis plus oscillations along the x- and y-axes  
+- **Use case**: Ideal for six-degree-of-freedom IMU–LiDAR solvers requiring full-axis excitation (e.g., [LI-Init](https://github.com/hku-mars/LiDAR_IMU_Init))
 
-![Square Sequence](../../assets/images/sequences/square.jpg){ loading=lazy }
+![](../../../assets/dataset/sequences/calib_full_excite_li_init.gif)
 
-**Description**: The robot follows a square trajectory with 2-meter sides, returning to the starting position.
+!!! note "Illustration"  
+    Example GIF sourced from the [LI-Init GitHub repository](https://github.com/hku-mars/LiDAR_IMU_Init) to demonstrate the excitation pattern. Actual dataset sequence uses the same motion profile for calibration.
 
-**Purpose**: This sequence tests the algorithm's ability to handle 90-degree turns and maintain consistent odometry through multiple direction changes.
+### Infinity Sequence (Lemniscate of Bernoulli)
 
-**Duration**: Approximately 60 seconds
+- **Path**: Floor-level figure-eight (lemniscate) trajectory  
+- **Equation**:  \(
+    x(t) = \frac{a\cos t}{1 + \sin^2 t}, 
+    \quad
+    y(t) = \frac{a\sin t\cos t}{1 + \sin^2 t},
+    \quad a = c\sqrt{2},
+    \quad PF_1 \cdot PF_2 = c^2
+    \)
+- **Use case**: Suited for ground-robot calibration algorithms exploiting planar constraints (e.g., [GRIL-Calib](https://github.com/Taeyoung96/GRIL-Calib))
 
-**Challenges**: Sharp turns, maintaining orientation accuracy
+![](../../../assets/dataset/sequences/calib_lemniscate_bernoulli_trajectory.png)
 
-### Circle
+## Wheel Odometry Calibration
 
-![Circle Sequence](../../assets/images/sequences/circle.jpg){ loading=lazy }
+The dataset includes wheel odometry calibration sequences that consist of 2m×2m square-shaped trajectories, a widely used approach for odometry calibration in mobile robotics.
 
-**Description**: The robot follows a circular trajectory with a radius of approximately 1.5 meters, completing two full circles.
+![Square-shaped Trajectories](../../../assets/dataset/sequences/calib_square_trajectory.png)
 
-**Purpose**: This sequence tests the algorithm's ability to handle continuous curvature and maintain consistent odometry through gradual direction changes.
+Four distinct trajectory patterns were executed:
 
-**Duration**: Approximately 45 seconds
+| Pattern                  | Description                                        | Cycles | Length  | Duration   |
+| ------------------------ | -------------------------------------------------- | ------ | ------- | ---------- |
+| **CW with Rotation**     | Clockwise square, rotate in place at each corner   | 2      | ~16 m   | ~2 min     |
+| **CW without Rotation**  | Clockwise square, pure 90° turns                   | 2      | ~16 m   | ~1 min     |
+| **CCW with Rotation**    | Counterclockwise square, rotate at each corner     | 2      | ~16 m   | ~2 min     |
+| **CCW without Rotation** | Counterclockwise square, pure 90° turns            | 2      | ~16 m   | ~1 min     |
 
-**Challenges**: Continuous curvature, maintaining orientation during circular motion
+The dataset includes sixteen odometry calibration sequences in total:
 
-### Figure Eight
+- Four trajectory patterns (as described above)
+- Repeated for each of the four 3D LiDAR sensors
 
-![Figure Eight Sequence](../../assets/images/sequences/figure_eight.jpg){ loading=lazy }
+!!! note "Sensor Independence"
+    Although odometry calibration parameters are independent of other sensors, including the 3D LiDARs, providing multiple sequences enhances the precision and reliability of the calibration process.
 
-**Description**: The robot follows a figure-eight trajectory, combining aspects of both circular and straight-line motion.
+!!! tip "Additional Uses"
+    These sequences can also serve as alternative data for extrinsic calibration algorithms, complementing or substituting the other 2 extrinsic calibration sequences when needed.
 
-**Purpose**: This sequence tests the algorithm's ability to handle complex trajectories with varying curvature.
+## Accessing Calibration Sequences
 
-**Duration**: Approximately 60 seconds
+You can download calibration sequences using the IILABS 3D toolkit:
 
-**Challenges**: Varying curvature, crossing paths
+```bash
+iilabs3d download <output_directory> <sequence_name> <sensor_name>
+```
 
-### Static
+For example, to download the full excite calibration sequence for the Livox Mid-360 sensor:
 
-![Static Sequence](../../assets/images/sequences/static.jpg){ loading=lazy }
+```bash
+iilabs3d download ~/slam_data calib_full_excite livox_mid_360
+```
 
-**Description**: The robot remains stationary while sensors collect data.
-
-**Purpose**: This sequence is useful for evaluating sensor noise characteristics and testing the algorithm's ability to maintain a stable position estimate when not moving.
-
-**Duration**: Approximately 30 seconds
-
-**Challenges**: Distinguishing between sensor noise and actual movement -->
+!!! tip "Downloading All Calibration Sequences"
+    To download all calibration sequences for all sensors:
+    ```bash
+    iilabs3d download ~/slam_data calib all
+    ```

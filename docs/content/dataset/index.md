@@ -50,7 +50,7 @@ The dataset provides three types of data:
 | :----------------- | :-------------------------------------- | :------------------------------------- | :---------- |
 | /eve/lidar3d       | sensor_msgs/PointCloud2                 | raw pointcloud data (Velodyne VLP-16 / RoboSense RS-Helios-5515 / Livox Mid-360) | 10Hz |
 | /eve/ouster/points | sensor_msgs/PointCloud2                 | raw pointcloud data (Ouster OS1-64)    | 10Hz        |
-| /eve/imu/data      | sensor_msgs/Imu                         | raw IMU data (Xsens Mti-630)           | 400Hz       |
+| /eve/imu/data      | sensor_msgs/Imu                         | raw IMU data (Xsens MTi-630)           | 400Hz       |
 | /eve/ouster/imu    | sensor_msgs/Imu                         | raw IMU data (Ouster OS1-64)           | 100Hz       |
 | /eve/livox/imu     | sensor_msgs/Imu                         | raw IMU data (Livox Mid-360)           | 200Hz       |
 | /eve/scan          | sensor_msgs/LaserScan                   | raw laser scan data (Hokuyo UST-10LX)  | 40Hz        |
@@ -100,13 +100,13 @@ iilabs3d list-sequences
 iilabs3d list-sensors
 
 # Download a specific sequence for a specific sensor
-iilabs3d download ~/data loop livox_mid_360
+iilabs3d download ~/slam_data loop livox_mid_360
 ```
 
 !!! tip "Downloading All Data"
     To download all benchmark sequences for all sensors:
     ```bash
-    iilabs3d download ~/data bench all
+    iilabs3d download ~/slam_data bench all
     ```
 
 !!! info "Additional Information"

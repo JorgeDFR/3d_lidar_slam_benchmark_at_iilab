@@ -127,3 +127,23 @@ The IILABS 3D dataset includes the following benchmark sequences:
 
 !!! info "Ground Truth Data"
     In the *elevator* sequence, the mobile robot temporarily exists in the Nav A space and enters the external corridor, in order to access the elevator and move to the second floor. Since the ground-truth system is installed in the Nav A space, ground-truth data is only provided when the robot is inside the Nav A.
+
+## Accessing Benchmark Sequences
+
+You can download benchmark sequences using the IILABS 3D toolkit:
+
+```bash
+iilabs3d download <output_directory> <sequence_name> <sensor_name>
+```
+
+For example, to download the loop benchmark sequence for the Livox Mid-360 sensor:
+
+```bash
+iilabs3d download ~/slam_data loop livox_mid_360
+```
+
+!!! tip "Downloading All Benchmark Sequences"
+    To download all benchmark sequences for all sensors:
+    ```bash
+    iilabs3d download ~/slam_data bench all
+    ```

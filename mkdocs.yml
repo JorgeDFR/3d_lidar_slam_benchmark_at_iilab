@@ -123,6 +123,10 @@ markdown_extensions:
       relative_path: ''
       absolute: false
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  
 # Page tree
 nav:
   - About: index.md

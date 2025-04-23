@@ -20,9 +20,11 @@ From these recordings, Allan-variance plots can be generated to estimate the noi
 For illustrative purposes, the following figures represent the Allan-variance plots obtained for the Xsens MTi-630 AHRS IMU.
 
 <div class="grid" markdown>
+
 ![](../../../assets/dataset/sequences/allan_variance_xsens_mti_630_gyroscope.png)
 
 ![](../../../assets/dataset/sequences/allan_variance_xsens_mti_630_accelerometer.png)
+
 </div>
 
 !!! info "Parameter Adjustment"

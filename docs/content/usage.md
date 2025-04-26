@@ -109,7 +109,7 @@ The benchmark uses two Docker images:
 
 === "ROS 2 (Humble)"
     Contains the following SLAM algorithms:
-    
+     
     - :octicons-x-circle-24: VineSLAM
     - :octicons-check-circle-fill-24: KISS-ICP
     - :octicons-check-circle-fill-24: GLIM

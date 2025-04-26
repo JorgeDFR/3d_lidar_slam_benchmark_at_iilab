@@ -91,7 +91,7 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
 !!! warning "GUI Applications"
     Before running RViz inside the Docker container, you need to set up `xhost`:
     ```bash
-    ./docker/setup_xhost.sh
+    ./setup_xhost.sh
     ```
 
 !!! warning "Dataset Directory"

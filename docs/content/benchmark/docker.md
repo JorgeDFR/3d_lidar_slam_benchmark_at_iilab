@@ -9,19 +9,19 @@ The benchmark uses two Docker images:
 === "ROS 1 Image"
     Contains the following SLAM algorithms:
     
-    - :octicons-check-circle-fill-24:{ .success } A-LOAM
-    - :octicons-check-circle-fill-24:{ .success } LeGO-LOAM-BOR
-    - :octicons-check-circle-fill-24:{ .success } LIORF
-    - :octicons-check-circle-fill-24:{ .success } DLIO
+    - :octicons-check-circle-fill-24: A-LOAM
+    - :octicons-check-circle-fill-24: LeGO-LOAM-BOR
+    - :octicons-check-circle-fill-24: LIORF
+    - :octicons-check-circle-fill-24: DLIO
 
 === "ROS 2 Image"
     Contains the following SLAM algorithms:
     
-    - :octicons-check-circle-fill-24:{ .success } VineSLAM
-    - :octicons-check-circle-fill-24:{ .success } KISS-ICP
-    - :octicons-check-circle-fill-24:{ .success } GLIM
-    - :octicons-check-circle-fill-24:{ .success } Kinematic-ICP
-    - :octicons-check-circle-fill-24:{ .success } MOLA-LO
+    - :octicons-x-circle-24: VineSLAM
+    - :octicons-check-circle-fill-24: KISS-ICP
+    - :octicons-check-circle-fill-24: GLIM
+    - :octicons-check-circle-fill-24: Kinematic-ICP
+    - :octicons-check-circle-fill-24: MOLA-LO
 
 Both images include:
 

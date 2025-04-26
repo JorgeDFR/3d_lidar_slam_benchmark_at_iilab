@@ -75,11 +75,11 @@ The dataset provides three types of data:
 
 === "Ground Truth Collection"
 
-    Ground-truth data was captured using an OptiTrack MoCap system featuring 24 high-resolution PrimeX 22 cameras. These cameras were connected via Ethernet to a primary Windows computer running the Motive software, which processed the camera data. This Windows computer was then connected via Ethernet to a secondary Ubuntu machine running the NatNet 4 ROS driver.
+    Ground-truth data was captured using an OptiTrack MoCap system featuring 24 high-resolution PrimeX 22 cameras. These cameras were connected via Ethernet to a primary Windows computer running the Motive software, which processed the camera data. This Windows computer was then connected via Ethernet to a secondary Ubuntu machine running the NatNet 4 ROS driver. The bag files were processed using the EVO open-source Python library to convert the data into TUM format and adjust the initial position offsets for accurate SLAM odometry benchmarking.
 
 === "Synchronization"
 
-    Temporal synchronization between the robot platform and the ground-truth system was achieved using the Network Time Protocol (NTP). The bag files were processed using the EVO open-source Python library to convert the data into TUM format and adjust the initial position offsets for accurate SLAM odometry benchmarking.
+    Temporal synchronization between the robot platform and the ground-truth system was achieved using the Network Time Protocol (NTP). 
 
 ## Accessing the Dataset
 

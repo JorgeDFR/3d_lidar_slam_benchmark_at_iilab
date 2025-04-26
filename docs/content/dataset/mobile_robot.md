@@ -19,7 +19,7 @@ The base platform is a modified Hangfa Discovery Q2, which has been customized b
 ### Locomotion System
 
 - :material-robot: **Drive Type**: Omnidirectional drive (Mecanum wheels)
-- :material-engine: **Motors**: 2 × Faulhaber 2342 DC motors
+- :material-engine: **Motors**: 4 × Faulhaber 2342 DC motors
 - :material-cog: **Gear Ratio**: 64:1
 - :material-counter: **Wheel Encoders**: 12 Counts Per Revolution (CPR)
 - :material-speedometer: **Maximum Speed**: 0.65 m/s

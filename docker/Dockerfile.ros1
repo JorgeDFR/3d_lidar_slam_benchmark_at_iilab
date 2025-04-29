@@ -97,10 +97,10 @@ ARG ROS1_WS=/root/ros1_ws
 # Create workspace directory and clone SLAM repositories
 RUN mkdir -p ${ROS1_WS}/src && \
     cd ${ROS1_WS}/src && \
-    git clone https://github.com/Thorfr123/A-LOAM.git && \
-    git clone https://github.com/Thorfr123/LeGO-LOAM-BOR.git && \
+    git clone https://github.com/JorgeDFR/A-LOAM.git && \
+    git clone https://github.com/JorgeDFR/LeGO-LOAM-BOR.git && \
     git clone https://github.com/Livox-SDK/livox_ros_driver.git && \
-    git clone https://github.com/Thorfr123/liorf.git && \
+    git clone https://github.com/JorgeDFR/liorf.git && \
     git clone https://github.com/vectr-ucla/direct_lidar_inertial_odometry.git
     
 # Copy local configuration files

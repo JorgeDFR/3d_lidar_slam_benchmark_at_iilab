@@ -17,7 +17,7 @@ The benchmark uses two Docker images:
 === "ROS 2 Image"
     Contains the following SLAM algorithms:
     
-    - :octicons-x-circle-24: VineSLAM
+    - :octicons-check-circle-fill-24: VineSLAM
     - :octicons-check-circle-fill-24: KISS-ICP
     - :octicons-check-circle-fill-24: GLIM
     - :octicons-check-circle-fill-24: Kinematic-ICP
@@ -50,7 +50,13 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
 
 === "ROS 1 (Noetic)"
 
-    Build the Docker image:
+    #### Option 1: Pull Prebuilt Image (faster)
+
+    ```bash
+    docker pull jorgedfr/3d_slam_ros1:noetic
+    ```
+
+    #### Option 2: Build Image Locally (slower)
 
     ```bash
     docker compose build ros1_noetic
@@ -70,7 +76,13 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
 
 === "ROS 2 (Humble)"
 
-    Build the Docker image:
+    #### Option 1: Pull Prebuilt Image (faster)
+
+    ```bash
+    docker pull jorgedfr/3d_slam_ros2:humble
+    ```
+
+    #### Option 2: Build Image Locally (slower)
 
     ```bash
     docker compose build ros2_humble
@@ -107,6 +119,7 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
     # Set environment variables
     export SLAM_CONF=<algorithm_name>  
     # Options: aloam, lego_loam_bor, liorf, dlio
+
     export SLAM_SENSOR=<sensor_name>  
     # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
 
@@ -127,7 +140,8 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
     ```bash
     # Set environment variables
     export SLAM_CONF=<algorithm_name>  
-    # Options: aloam, lego_loam_bor, liorf, dlio
+    # Options: vineslam, kiss_icp, glim, kinematic_icp, mola_lo
+
     export SLAM_SENSOR=<sensor_name>  
     # Options: velodyne_vlp_16, ouster_os1_64, robosense_rs_helios_5515, livox_mid_360
 
@@ -140,6 +154,19 @@ cd 3d_lidar_slam_benchmark_at_iilab/docker
     ros2 bag play <rosbag_file_path>
     ```
 
+!!! warning "VineSLAM Special Case"
+    VineSLAM requires recompilation of its ROS 2 package whenever the LiDAR sensor is changed. Use the `-DLIDAR_TYPE` CMake argument to specify your sensor:
+
+    - `-DLIDAR_TYPE=0` (default) for Velodyne VLP-16
+    - `-DLIDAR_TYPE=1` for RoboSense RS-Helios-5515
+    - `-DLIDAR_TYPE=3` for Ouster-OS1-64
+    - `-DLIDAR_TYPE=4` for Livox Mid-360
+
+    ```bash
+    cd ros2_ws
+    colcon build --packages-select vineslam_ros --cmake-args -DLIDAR_TYPE=0
+    ```
+    
 ## Offline Processing Mode
 
 Alternatively, several SLAM algorithms support an offline mode that processes rosbag files faster than real-time without losing messages:

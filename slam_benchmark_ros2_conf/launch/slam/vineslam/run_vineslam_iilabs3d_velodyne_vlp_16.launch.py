@@ -3,9 +3,9 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 # Comamnd to build the package for different LiDAR models:
-# colcon build --packages-select vineslam_ros --cmake-args -DCMAKE_BUILD_TYPE=Release -DLIDAR_TYPE=0
+# colcon build --packages-select vineslam_ros --cmake-args -DLIDAR_TYPE=0
 
-# The -DLIDAR_TYPE cmake argument compiles VineSLAM for specific LiDAR models:
+# The -DLIDAR_TYPE cmake argument compiles VineSLAM for specific LiDAR sensors:
 # -DLIDAR_TYPE=0 corresponds to Velodyne VLP-16
 # -DLIDAR_TYPE=1 corresponds to RoboSense RS-Helios-5515
 # -DLIDAR_TYPE=2 corresponds to Livox Mid 70
@@ -22,7 +22,7 @@ def generate_launch_description():
     # VineSLAM node
     vineslam = Node(
         package='vineslam_ros',
-        node_executable='slam_node',
+        executable='slam_node',
         name='slam_node',
         parameters=[params],
         remappings=[

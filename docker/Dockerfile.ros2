@@ -25,51 +25,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cmake \
     libboost-all-dev \
     libeigen3-dev \
-    libglm-dev \
-    libglfw3-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libnanoflann-dev \
     libtbb-dev \
-    && rm -rf /var/lib/apt/lists/*             
-
-# Install GTSAM 4.2a9
-RUN cd /tmp && \
-    git clone --branch 4.2a9 --depth 1 https://github.com/borglab/gtsam.git && \
-    cd gtsam && \
-    mkdir -p build && cd build && \
-    cmake .. -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
-             -DGTSAM_BUILD_TESTS=OFF \
-             -DGTSAM_WITH_TBB=OFF \
-             -DGTSAM_USE_SYSTEM_EIGEN=ON \
-             -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF && \
-    make -j4 && \
-    make install && \
-    rm -rf /tmp/gtsam
-
-# Install Iridescence 
-RUN cd /tmp && \
-    git clone https://github.com/koide3/iridescence.git --recursive && \
-    cd iridescence && \
-    mkdir -p build && cd build && \
-    cmake .. -DCMAKE_BUILD_TYPE=Release && \
-    make -j4 && \
-    make install && \
-    rm -rf /tmp/iridescence
-
-# Install gtsam_points
-RUN cd /tmp && \
-    git clone https://github.com/koide3/gtsam_points.git && \
-    cd gtsam_points && \
-    mkdir -p build && cd build && \
-    cmake .. -DCMAKE_BUILD_TYPE=Release \
-             -DBUILD_DEMO=OFF \
-             -DBUILD_TESTS=OFF \
-             -DBUILD_WITH_CUDA=OFF \
-             -DBUILD_WITH_MARCH_NATIVE=OFF && \
-    make -j4 && \
-    make install && \
-    rm -rf /tmp/gtsam_points
+    libopencv-dev \
+    libmetis-dev \
+    && rm -rf /var/lib/apt/lists/*
 # --------------------------------------------- #
 
 # ROS installation
@@ -111,6 +70,19 @@ RUN colcon mixin add default \
 # --------------------------------------------- #
 ARG ROS2_WS=/root/ros2_ws
 
+# Install GLIM and necessary tools
+RUN curl -s --compressed "https://koide3.github.io/ppa/ubuntu2204/KEY.gpg" \
+         | gpg --dearmor \
+         | sudo tee /etc/apt/trusted.gpg.d/koide3_ppa.gpg > /dev/null
+RUN echo "deb [signed-by=/etc/apt/trusted.gpg.d/koide3_ppa.gpg] \ 
+          https://koide3.github.io/ppa/ubuntu2204 ./" \
+         | sudo tee /etc/apt/sources.list.d/koide3_ppa.list
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libiridescence-dev \
+    libgtsam-points-dev \
+    ros-${ROS_DISTRO}-glim-ros \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install MOLA-LO and necessary tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-mola \
@@ -122,9 +94,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p ${ROS2_WS}/src && \
     cd ${ROS2_WS}/src && \
     git clone https://github.com/PRBonn/kiss-icp.git && \
-    git clone https://github.com/Thorfr123/kinematic-icp.git && \
-    git clone https://github.com/koide3/glim.git && \
-    git clone https://github.com/koide3/glim_ros2.git
+    git clone https://github.com/JorgeDFR/kinematic-icp.git && \
+    git clone https://github.com/JorgeDFR/vineslam-os.git
 
 # Copy local configuration files
 COPY ./slam_benchmark_ros2_conf ${ROS2_WS}/src/slam_benchmark_ros2_conf/
@@ -135,8 +106,8 @@ RUN bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash && \
              apt-get update && \
              rosdep install --from-paths src --ignore-src -r -y && \
              colcon build --packages-select kiss_icp kinematic_icp && \
-             colcon build --packages-select glim --cmake-args -DBUILD_WITH_CUDA=OFF && \
-             colcon build --packages-select glim_ros && \
+             colcon build --packages-select vineslam && \
+             colcon build --packages-select vineslam_ros --cmake-args -DLIDAR_TYPE=0 && \
              colcon build --packages-select slam_benchmark_ros2_conf && \
              rm -rf /var/lib/apt/lists/*"
 

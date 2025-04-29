@@ -4,6 +4,9 @@
   <arg name="run_offline" default="false"/>
   <arg name="rosbag_path" default=""/>
 
+  <!-- Path where GTSAM 4.2a9 is installed -->
+  <set_env name="LD_LIBRARY_PATH" value="/usr/local/lib:$(env LD_LIBRARY_PATH)"/> 
+
   <include file="$(find-pkg-share slam_benchmark_ros2_conf)/launch/slam/glim/run_glim_$(var dataset)_$(var sensor).launch.py">
     <arg name="run_offline" value="$(var run_offline)"/>
     <arg name="rosbag_path" value="$(var rosbag_path)"/>

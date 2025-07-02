@@ -44,10 +44,10 @@ The main documentation and results site for the benchmark, including usage instr
 
 ## Repository Structure
 
-- `docs/` — Documentation source for the GitHub Pages site (MkDocs)
-- `docker/` — Dockerfiles and compose files for ROS1/ROS2 environments
-- `slam_benchmark_ros1_conf/` & `slam_benchmark_ros2_conf/` — ROS launch/configuration files for SLAM algorithms
-- `external/` — External dependencies and interfaces
+- `docs/`: Documentation source for the GitHub Pages site (MkDocs)
+- `docker/`: Dockerfiles and compose files for ROS 1/ROS 2 environments
+- `slam_benchmark_ros1_conf/` & `slam_benchmark_ros2_conf/`: ROS launch/configuration files for SLAM algorithms
+- `external/`: External dependencies and interfaces
 
 ## License
 

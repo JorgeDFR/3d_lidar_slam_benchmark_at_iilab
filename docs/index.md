@@ -11,31 +11,31 @@
     Light Detection and Ranging (LiDAR),
     Simultaneous Localization and Mapping (SLAM).
 
-This repository hosts the complete documentation and supporting resources for the project 
+This repository hosts the complete documentation and supporting resources for the project
 ["Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory"](index.md).
-The project evaluates state-of-the-art 3D LiDAR SLAM algorithms using data captured in 
-indoor environments. To this end, the study introduces the novel 
-[IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), which contains data from 
-four diverse 3D LiDAR sensors (Velodyne VLP-16, Ouster OS1-64, RoboSense RS-Helios-5515, and Livox Mid-360), 
+The project evaluates state-of-the-art 3D LiDAR SLAM algorithms using data captured in
+indoor environments. To this end, the study introduces the novel
+[IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), which contains data from
+four diverse 3D LiDAR sensors (Velodyne VLP-16, Ouster OS1-64, RoboSense RS-Helios-5515, and Livox Mid-360),
 complemented by measurements from an IMU and wheel odometry.
 
-In parallel with the dataset, the project presents a detailed benchmark analysis of nine 
-leading SLAM algorithms. By comparing algorithm-generated odometry against high-accuracy 
-ground-truth data using metrics such as ATE, RTE, and RRE, the study provides valuable insights 
+In parallel with the dataset, the project presents a detailed benchmark analysis of nine
+leading SLAM algorithms. By comparing algorithm-generated odometry against high-accuracy
+ground-truth data using metrics such as ATE, RTE, and RRE, the study provides valuable insights
 into the performance, limitations, and integration of these algorithms in indoor environments.
 
-The primary aim of this website and GitHub repository is to support researchers in developing, 
+The primary aim of this website and GitHub repository is to support researchers in developing,
 benchmarking, and applying 3D LiDAR-based SLAM solutions in indoor settings.
 As a result, the website includes the following information:
 
-- **[Usage](content/usage.md):** Step-by-step instructions for replicating the benchmark study 
+- **[Usage](content/usage.md):** Step-by-step instructions for replicating the benchmark study
   using the provided scripts and dataset.
-- **[Dataset](content/dataset/index.md):** A detailed overview of the 
-  [IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001), 
+- **[Dataset](content/dataset/index.md):** A detailed overview of the
+  [IILABS 3D dataset](https://rdm.inesctec.pt/dataset/nis-2025-001),
   its structure, and key characteristics.
-- **[Sensors](content/sensors/index.md):** Specifications and technical details 
+- **[Sensors](content/sensors/index.md):** Specifications and technical details
   of the sensors used during data collection.
-- **[Benchmark](content/benchmark/index.md):** A summary of the benchmark scripts, 
+- **[Benchmark](content/benchmark/index.md):** A summary of the benchmark scripts,
   experimental setup, and key results from the analysis.
 
 Lastly, this work is within the scope of the
@@ -143,7 +143,7 @@ TBC
 
 J.D. Ribeiro, R.B. Sousa, J.G. Martins, A.S. Aguiar, F.N. Santos and H.M. Sobreira,
 "Indoor Benchmark of 3D LiDAR SLAM at iilab - Industry and Innovation Laboratory",
-_IEEE Access_, 2025, pp. TBD, doi: TBD.
+_TBD_, 2025, pp. TBD, doi: TBD.
 
 **BibTex**
 
@@ -151,7 +151,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 @ARTICLE{ribeiro:2025:benchmark,
   author    = {J.D. Ribeiro and R.B. Sousa and J.G. Martins and A.S. Aguiar and F.N. Santos and H.M. Sobreira},
   title     = {{I}ndoor {B}enchmark of {3D} {LiDAR} {SLAM} at iilab - {I}ndustry and {I}nnovation {L}aboratory},
-  journal   = {IEEE Access}, 
+  journal   = {TBD},
   year      = {2025},
   volume    = {},
   number    = {},
@@ -165,7 +165,7 @@ _IEEE Access_, 2025, pp. TBD, doi: TBD.
 **Plain Text**
 
 J.D. Ribeiro, R.B. Sousa, J.G. Martins, A.S. Aguiar, F.N. Santos and H.M. Sobreira,
-"IILABS 3D: iilab Indoor LiDAR-based SLAM Dataset", \[Dataset\], INESC TEC, 2025, 
+"IILABS 3D: iilab Indoor LiDAR-based SLAM Dataset", \[Dataset\], INESC TEC, 2025,
 doi: [10.25747/VHNJ-WM80](https://doi.org/10.25747/VHNJ-WM80).
 
 **BibTex**

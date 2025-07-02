@@ -21,7 +21,7 @@ The main documentation and results site for the benchmark, including usage instr
 - **[Dataset Toolkit](https://github.com/JorgeDFR/iilabs3d-toolkit):**
   A Python package providing utilities for downloading, managing, and evaluating the IILABS 3D dataset. Includes tools for sequence download, conversion, and evaluation.
 
-- **[YouTube Playlist]([https://www.youtube.com/playlist?list=PL__T3ljZgf9tR-B4t1Kc1U7aTt-duUs-3):**
+- **[YouTube Playlist](https://www.youtube.com/playlist?list=PL__T3ljZgf9tR-B4t1Kc1U7aTt-duUs-3):**
   Videos demonstrating the dataset sequences, benchmark experiments and SLAM algorithms performance.
 
 - **Docker Images ([ROS 1](https://hub.docker.com/r/jorgedfr/3d_slam_ros1) / [ROS 2](https://hub.docker.com/r/jorgedfr/3d_slam_ros2)):**

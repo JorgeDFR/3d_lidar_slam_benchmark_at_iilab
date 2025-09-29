@@ -1,5 +1,5 @@
 # Project information
-site_name: Indoor Benchmark of 3D LiDAR SLAM at iilab 
+site_name: Indoor Benchmark of 3D LiDAR SLAM at iilab
 site_url: https://jorgedfr.github.io/3d_lidar_slam_benchmark_at_iilab
 site_author: Jorge Diogo Ribeiro
 site_description:
@@ -126,16 +126,16 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  
+
 # Page tree
 nav:
   - About: index.md
   - Usage: content/usage.md
-  - Dataset: 
+  - Dataset:
     - content/dataset/index.md
     - Mobile Robot: content/dataset/mobile_robot.md
     - Ground Truth: content/dataset/ground_truth.md
-    - Sequences: 
+    - Sequences:
       - Calibration Sequences: content/dataset/sequences/calibration_sequences.md
       - Benchmark Sequences: content/dataset/sequences/benchmark_sequences.md
   - Sensors:
@@ -152,10 +152,10 @@ nav:
     - Inertial Measurement Units (IMUs):
       - content/sensors/imu/index.md
       - Xsens MTi-630 AHRS: content/sensors/imu/xsens_mti-630-ahrs.md
-  - Benchmark: 
+  - Benchmark:
     - content/benchmark/index.md
     - SLAM Algorithms: content/benchmark/slam_algorithms.md
-    - Results: 
+    - Results:
       - content/benchmark/results/index.md
       - 3D LiDAR Sensors:
         - Livox Mid 360: content/benchmark/results/3d_lidar_sensors/livox_mid-360.md
@@ -174,4 +174,4 @@ nav:
         - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md
     - Docker Environment: content/benchmark/docker.md
     - Install Docker: content/benchmark/install_docker.md
-  # - Preprint: content/preprint.md
+  - Preprint: content/preprint.md

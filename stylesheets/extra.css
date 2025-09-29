@@ -1,0 +1,7 @@
+[data-md-color-scheme="inesctec"] {
+  --md-primary-fg-color:        #008BBE;
+  --md-primary-fg-color--light: #64C7EA;
+  --md-primary-fg-color--dark:  #00233D;
+
+  --md-typeset-a-color: var(--md-primary-fg-color);
+}

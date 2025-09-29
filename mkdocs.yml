@@ -174,4 +174,3 @@ nav:
         - MOLA-LO: content/benchmark/results/slam_algorithms/mola_lo.md
     - Docker Environment: content/benchmark/docker.md
     - Install Docker: content/benchmark/install_docker.md
-  - Preprint: content/preprint.md
